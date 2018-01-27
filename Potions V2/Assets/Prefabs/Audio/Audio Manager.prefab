@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1134155699695738}
+  m_IsPrefabParent: 1
+--- !u!1 &1134155699695738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4940048844154572}
+  - component: {fileID: 114667615583632894}
+  - component: {fileID: 114557620645151156}
+  - component: {fileID: 114813317918349274}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4940048844154572
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134155699695738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114557620645151156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134155699695738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515cd85d571de974b9cf3597fca726dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainTheme: {fileID: 8300000, guid: f9d603a0569c2574985cf8513b528207, type: 3}
+  menuTheme: {fileID: 0}
+--- !u!114 &114667615583632894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134155699695738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5774751bee03ee4ab7822573c703987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolumePercent: 1
+  sfxVolumePercent: 1
+  musicVolumePercent: 1
+--- !u!114 &114813317918349274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134155699695738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f74b186b8db5c4fb9cdd578f53ada9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundGroups:
+  - groupID: IngredientPickup
+    group:
+    - {fileID: 8300000, guid: b2fd4b10ad5e8a246be2219bdbe3ae20, type: 3}
+    - {fileID: 8300000, guid: e647fcaee88e3e347bc4b8aa09ade852, type: 3}
+    - {fileID: 8300000, guid: 41cca593e5da5d347b7af933b18ee23e, type: 3}
+    - {fileID: 8300000, guid: d9e34e79040d6054a99bfd681c1e1225, type: 3}
+    - {fileID: 8300000, guid: 09c715955e1c2704499d9a6f09479e19, type: 3}
+    - {fileID: 8300000, guid: dbd73745acee2484db6d0014a8cef7ee, type: 3}
+    - {fileID: 8300000, guid: d78069735c0f14b40802c4767564ed14, type: 3}
+    - {fileID: 8300000, guid: 2916ff68b614e194db7547cfc248b007, type: 3}
+    - {fileID: 8300000, guid: d2c65dcf7ade7e945826ab452a90285a, type: 3}
+    - {fileID: 8300000, guid: bfbabd124d015914696111488c7bcc60, type: 3}
+  - groupID: Dropped in Cauldron
+    group:
+    - {fileID: 8300000, guid: e49a288bb7e2a3a45b45ec2c76e6074a, type: 3}
+    - {fileID: 8300000, guid: 7f5b1f76d0c380549a767231ee0f7db6, type: 3}
+    - {fileID: 8300000, guid: dfa47fe971ffd5d4aa3344257c8bf3e1, type: 3}
+    - {fileID: 8300000, guid: 870ab7a4871e5d44092b7f05dd6c2ddd, type: 3}
+    - {fileID: 8300000, guid: 7fb5b6f8e89e3a54e87d54261a3e6bd0, type: 3}
+    - {fileID: 8300000, guid: 422ead040b874bb4da14db4d27cfb9bc, type: 3}
+    - {fileID: 8300000, guid: ed7979cca68b1eb44ab872beb92e74c0, type: 3}
+    - {fileID: 8300000, guid: fa6cba83a4316904f9489e7d058b2c15, type: 3}
