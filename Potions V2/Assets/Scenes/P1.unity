@@ -2677,7 +2677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515cd85d571de974b9cf3597fca726dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTheme: {fileID: 0}
+  mainTheme: {fileID: 8300000, guid: f9d603a0569c2574985cf8513b528207, type: 3}
   menuTheme: {fileID: 0}
 --- !u!114 &1692941327
 MonoBehaviour:
