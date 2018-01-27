@@ -25,6 +25,7 @@ class CustomNetworkManager : NetworkManager
     }
     public override void OnServerDisconnect(NetworkConnection conn)
     {
+        Debug.Log("Player disconnected");
         connectedPlayers -= 1;
         base.OnServerDisconnect(conn);
     }
