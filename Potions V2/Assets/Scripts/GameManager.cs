@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("All players Ready");
 
+        NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
+        hud.enabled = false;
+
         // Event
         if (onPlayersReady != null)
             onPlayersReady();
