@@ -15,11 +15,11 @@ public class CrystalBallMsg : MonoBehaviour
 
     public IEnumerator Routine()
     {
-        Color c;
+        Color c = Color.white; 
 
         for (float t = 0; t < 1; t += Time.deltaTime)
         {
-            c = Color.Lerp(Color.clear, Color.white, t);
+            c.a = Mathf.Lerp(0, 1, t);
             mesh.color = c;
             yield return null;
         }
@@ -28,7 +28,7 @@ public class CrystalBallMsg : MonoBehaviour
 
         for (float t = 0; t < 1; t += Time.deltaTime)
         {
-            c = Color.Lerp(Color.white, Color.clear, t);
+            c.a = Mathf.Lerp(1, 0, t);
             mesh.color = c;
             yield return null;
         }

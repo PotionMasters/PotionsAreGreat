@@ -15,7 +15,6 @@ public class ChatBox : MonoBehaviour
 
     private void Awake()
     {
-        mesh = FindObjectOfType<TextMesh>();
         gm = FindObjectOfType<GameManager>();
     }
 
