@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ingredient : MonoBehaviour {
 
     [SerializeField] string ingredientName;
+    [SerializeField] List<Ingredient> compatibleIngredients;
 
     public string IngredientName
     {
