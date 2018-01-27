@@ -8,6 +8,17 @@ public class RecipeScene : MonoBehaviour
     [SerializeField] private GameObject book;
     [SerializeField] private List<Transform> steps;
 
+    private bool bookPopulated = false;
+
+    private void Update()
+    {
+        if(bookPopulated == false && recipe != null)
+        {
+            PopulateBook();
+            bookPopulated = true;
+        }
+    }
+
     public void PopulateBook()
     {
         if(recipe != null)
