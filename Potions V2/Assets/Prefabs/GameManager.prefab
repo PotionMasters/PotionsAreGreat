@@ -52,3 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeder: {fileID: 0}
+  debugSolo: 1

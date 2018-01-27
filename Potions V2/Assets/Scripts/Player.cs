@@ -11,8 +11,7 @@ public class Player : NetworkBehaviour
     private GameManager gm;
     public PlayerRole Role { get; private set; }
 
-    [SyncVar] public string chatText;
-    private string chatWord;
+    public string chatPhrase;
     private ChatBox chat;
 
 
@@ -34,21 +33,27 @@ public class Player : NetworkBehaviour
     }
     private void Update()
     {
-        chatWord += Input.inputString;
-        if (chatWord.Length > 0 && chatWord[chatWord.Length - 1] == ' ')
+        chatPhrase += Input.inputString;
+        if (chatPhrase.Length > 0 && Input.GetKeyDown(KeyCode.Return))
         {
             // Word complete - Send
-            CmdChat(chatWord);
-            chatWord = "";
+            CmdChat(chatPhrase);
+            chatPhrase = "";
         }
 
-        chat.UpdateChat(chatText + chatWord);
+        // Update pre cb msg
+        chat.textFieldMesh.text = chatPhrase;
     }
 
 
     [Command]
     private void CmdChat(string text)
     {
-        chatText += text;
+        RpcChat(text);
+    }
+    [ClientRpc]
+    private void RpcChat(string text)
+    {
+        chat.AddMsg(text);
     }
 }
