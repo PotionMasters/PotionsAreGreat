@@ -8,6 +8,9 @@ public class DraggableObject : MonoBehaviour {
 
     void OnMouseDown()
     {
+        //add sound
+        Debug.Log("Sound!");
+        AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -16,6 +19,7 @@ public class DraggableObject : MonoBehaviour {
 
     void OnMouseDrag()//seems simplest solution
     {
+        //add a dragging sound?
         float distance_to_screen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
 
