@@ -12,6 +12,7 @@ public class Player : NetworkBehaviour
     public PlayerRole Role { get; private set; }
 
     [SyncVar] public string chatText;
+    private string chatWord;
     private ChatBox chat;
 
 
@@ -33,8 +34,15 @@ public class Player : NetworkBehaviour
     }
     private void Update()
     {
-        CmdChat(Input.inputString);
-        chat.UpdateChat(chatText);
+        chatWord += Input.inputString;
+        if (chatWord.Length > 0 && chatWord[chatWord.Length - 1] == ' ')
+        {
+            // Word complete - Send
+            CmdChat(chatWord);
+            chatWord = "";
+        }
+
+        chat.UpdateChat(chatText + chatWord);
     }
 
 
