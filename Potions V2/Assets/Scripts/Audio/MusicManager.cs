@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
 
-    [Tooltip("Spacebar initiates the main theme ")]
     public AudioClip mainTheme;
     public AudioClip menuTheme;
 
