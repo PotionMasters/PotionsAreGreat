@@ -42,6 +42,7 @@ public class Player : NetworkBehaviour
         }
 
         // Update pre cb msg
+        chat.textFieldMesh.text = chatPhrase;
     }
 
 

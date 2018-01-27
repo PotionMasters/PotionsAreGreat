@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChatBox : MonoBehaviour
 {
-    private TextMesh mesh;
+    public TextMesh textFieldMesh;
     private GameManager gm;
 
     public CrystalBallMsg cbMsgPrefab;
