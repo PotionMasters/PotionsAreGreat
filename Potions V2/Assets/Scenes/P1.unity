@@ -2653,7 +2653,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f74b186b8db5c4fb9cdd578f53ada9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundGroups: []
+  soundGroups:
+  - groupID: IngredientPickup
+    group:
+    - {fileID: 8300000, guid: dbd73745acee2484db6d0014a8cef7ee, type: 3}
+    - {fileID: 8300000, guid: 2916ff68b614e194db7547cfc248b007, type: 3}
+    - {fileID: 8300000, guid: d78069735c0f14b40802c4767564ed14, type: 3}
+    - {fileID: 8300000, guid: d2c65dcf7ade7e945826ab452a90285a, type: 3}
+    - {fileID: 8300000, guid: bfbabd124d015914696111488c7bcc60, type: 3}
+    - {fileID: 8300000, guid: b2fd4b10ad5e8a246be2219bdbe3ae20, type: 3}
+    - {fileID: 8300000, guid: 09c715955e1c2704499d9a6f09479e19, type: 3}
+    - {fileID: 8300000, guid: e647fcaee88e3e347bc4b8aa09ade852, type: 3}
+    - {fileID: 8300000, guid: 41cca593e5da5d347b7af933b18ee23e, type: 3}
+    - {fileID: 8300000, guid: d9e34e79040d6054a99bfd681c1e1225, type: 3}
 --- !u!114 &1692941326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,7 +2690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5774751bee03ee4ab7822573c703987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVolumePercent: 0.2
+  masterVolumePercent: 1
   sfxVolumePercent: 1
   musicVolumePercent: 1
 --- !u!4 &1692941328
