@@ -11,9 +11,19 @@ public class Player : NetworkBehaviour
     private GameManager gm;
     public PlayerRole Role { get; private set; }
 
+    [SyncVar] public string chatText;
+    private ChatBox chat;
+
+
+    public bool IsLocalHuman()
+    {
+        return isLocalPlayer;
+    }
+
     private void Awake()
     {
         gm = FindObjectOfType<GameManager>();
+        chat = FindObjectOfType<ChatBox>();
     }
     private void Start()
     {
@@ -21,9 +31,16 @@ public class Player : NetworkBehaviour
 
         gm.RegisterPlayer(this);
     }
-
-    public bool IsLocalHuman()
+    private void Update()
     {
-        return isLocalPlayer;
+        CmdChat(Input.inputString);
+        chat.UpdateChat(chatText);
+    }
+
+
+    [Command]
+    private void CmdChat(string text)
+    {
+        chatText += text;
     }
 }
