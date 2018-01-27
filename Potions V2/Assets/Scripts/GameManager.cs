@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public bool PlayersReady { get; private set; }
     private System.Action onPlayersReady;
 
+    public bool debugSolo = false;
+
 
     public void RegisterPlayer(Player player)
     {
@@ -31,14 +33,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Registered potion player (player " + player.id + ")");
         }
 
-        if (BookPlayer != null && PotionPlayer != null)
+        if (debugSolo || (BookPlayer != null && PotionPlayer != null))
         {
             OnAllPlayersRegistered();
         }
     }
     public void DoOncePlayersReady(System.Action action)
     {
-        Debug.Log("All players Ready");
         if (PlayersReady) action();
         onPlayersReady += action;
     }
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
         // Set Ready
         PlayersReady = true;
         IsPlaying = true;
+
+        Debug.Log("All players Ready");
 
         // Event
         if (onPlayersReady != null)

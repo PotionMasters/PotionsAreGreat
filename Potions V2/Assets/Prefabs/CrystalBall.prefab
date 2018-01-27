@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1593950867135678}
+  m_RootGameObject: {fileID: 1471156348009106}
   m_IsPrefabParent: 1
---- !u!1 &1593950867135678
+--- !u!1 &1471156348009106
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4226142962747096}
-  - component: {fileID: 23947066612043538}
-  - component: {fileID: 102211611235942642}
-  - component: {fileID: 114378176352899082}
-  - component: {fileID: 114804971724081478}
+  - component: {fileID: 4480696197670984}
+  - component: {fileID: 33876164539546048}
+  - component: {fileID: 135909440043591658}
+  - component: {fileID: 23291397872758000}
+  - component: {fileID: 114565011774583956}
   m_Layer: 0
-  m_Name: ChatBox
+  m_Name: CrystalBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4226142962747096
+--- !u!4 &4480696197670984
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593950867135678}
+  m_GameObject: {fileID: 1471156348009106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.24, y: 0.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23947066612043538
+--- !u!23 &23291397872758000
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593950867135678}
+  m_GameObject: {fileID: 1471156348009106}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,73 +77,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!102 &102211611235942642
-TextMesh:
-  serializedVersion: 3
+--- !u!33 &33876164539546048
+MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593950867135678}
-  m_Text: Do the thing with the thing
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 3
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 12
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
---- !u!114 &114378176352899082
+  m_GameObject: {fileID: 1471156348009106}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114565011774583956
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593950867135678}
+  m_GameObject: {fileID: 1471156348009106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6df1dcd696215545990abcb1a1f8c61, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f8a6a25da5374047ace1e3ac7a6690e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SyncVarDirtyBits: 0
-  m_LastSendTime: 0
-  m_SyncVarGuard: 0
-  m_MyView: {fileID: 0}
-  mesh: {fileID: 0}
-  text: 
---- !u!114 &114804971724081478
-MonoBehaviour:
+  cbMsgPrefab: {fileID: 114626043874168438, guid: 6cd2c292a698f514aab342d777576a5a,
+    type: 2}
+--- !u!135 &135909440043591658
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593950867135678}
+  m_GameObject: {fileID: 1471156348009106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 129
-    i1: 189
-    i2: 35
-    i3: 92
-    i4: 98
-    i5: 207
-    i6: 107
-    i7: 84
-    i8: 75
-    i9: 38
-    i10: 185
-    i11: 237
-    i12: 25
-    i13: 9
-    i14: 215
-    i15: 191
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
