@@ -26,7 +26,7 @@ public class Cauldron : MonoBehaviour {
         if(currentRecipe.RequiredIngredients.Count == 0)
         {
             Debug.Log("You win!");
-            AudioManager.instance.PlaySound2D("Won");
+            //AudioManager.instance.PlaySound2D("Won");
         }	
 	}
 
@@ -40,7 +40,7 @@ public class Cauldron : MonoBehaviour {
         {
             currentRecipe.RequiredIngredients.Remove(ingred);
             Destroy(ingred.gameObject);
-            AudioManager.instance.PlaySound("Dropped in Cauldron", this.transform.position);
+            AudioManager.instance.PlaySound2D("Dropped in Cauldron");
             Debug.Log(ingred.IngredientName + " has been added.");
         }
     }
