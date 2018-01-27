@@ -12,16 +12,15 @@ public class RecipeScene : MonoBehaviour
     {
         if(recipe != null)
         {
-            int i = 0;
             foreach (var ingred in recipe.RequiredIngredients)
             {
-                if(i < steps.Count) Instantiate(ingred, steps[i++].transform, false);
+                Instantiate(ingred, Vector3.zero, Quaternion.identity, book.transform);
             }
         }
     }
 
     public void ClearBook()
     {
-       // foreach(Transform child in steps) { DestroyImmediate(child.gameObject); }         
+       foreach(Transform child in steps) { DestroyImmediate(child.gameObject); }         
     }
 }
