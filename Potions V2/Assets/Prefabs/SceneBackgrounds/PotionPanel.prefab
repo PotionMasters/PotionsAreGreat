@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4224916660061128}
   m_Layer: 0
-  m_Name: PotionScene
+  m_Name: PotionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
