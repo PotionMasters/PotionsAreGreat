@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private Panel panel;
     private float panelStartTime;
 
+    public Animator timerAnimator;
 
     public float GetTimeLeft()
     {
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (panel != Panel.Menu && panel != Panel.End && panel != Panel.Switch )
+        if (panel != Panel.Menu && panel != Panel.End && panel != Panel.Switch)
         {
             if (GetTimeLeft() <= 0)
             {
