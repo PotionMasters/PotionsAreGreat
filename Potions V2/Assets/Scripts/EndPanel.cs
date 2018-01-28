@@ -35,6 +35,7 @@ public class EndPanel : MonoBehaviour
         if (failurePotionFX != null && deathFXPoint != null)
         {
             GameObject clone = Instantiate(failurePotionFX, deathFXPoint.position, failurePotionFX.transform.rotation);
+            AudioManager.instance.PlaySound2D("Explosion");
             // effect
 
         }

@@ -119,3 +119,16 @@ MonoBehaviour:
     group:
     - {fileID: 8300000, guid: a4d63a18d45fd874ba15532413f821a5, type: 3}
     - {fileID: 8300000, guid: e58e466c25bf8574aae31aef110565e9, type: 3}
+  - groupID: Explosion
+    group:
+    - {fileID: 8300000, guid: a4d63a18d45fd874ba15532413f821a5, type: 3}
+    - {fileID: 8300000, guid: e58e466c25bf8574aae31aef110565e9, type: 3}
+    - {fileID: 8300000, guid: 9a8117562d6ad024e86dbd8dc1fa4d33, type: 3}
+    - {fileID: 8300000, guid: 32cfecbb614c5da4ba5e71f3625bcdc1, type: 3}
+    - {fileID: 8300000, guid: a68c8bec5be0d254b83133b749bd28d0, type: 3}
+    - {fileID: 8300000, guid: 7c49008080f8ee444bd90525a923dc5f, type: 3}
+    - {fileID: 8300000, guid: 21452c4319af1a749901a83cf66dac64, type: 3}
+    - {fileID: 8300000, guid: 72db52979ba57774aaa5570f1612400d, type: 3}
+    - {fileID: 8300000, guid: 8c94392a3a7d6884b840bb00a607c905, type: 3}
+    - {fileID: 8300000, guid: 448da76244c621145aae36d344e5141a, type: 3}
+    - {fileID: 8300000, guid: 4dc6c1b8c37bd5b42a0d014c13195973, type: 3}
