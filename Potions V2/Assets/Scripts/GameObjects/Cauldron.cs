@@ -26,7 +26,7 @@ public class Cauldron : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(currentRecipe.RequiredIngredients.Count == 0)
+        if(currentRecipe.Ingredients.Count == 0)
         {
             Debug.Log("You win!");
             //AudioManager.instance.PlaySound2D("Won");
@@ -44,9 +44,9 @@ public class Cauldron : MonoBehaviour {
 
         heldIngredients.Add(ingred);
 
-        if (currentRecipe.RequiredIngredients.Contains(ingred))
+        if (currentRecipe.Ingredients.Contains(ingred))
         {
-            currentRecipe.RequiredIngredients.Remove(ingred);
+            currentRecipe.Ingredients.Remove(ingred);
             Destroy(ingred.gameObject);
             AudioManager.instance.PlaySound2D("Dropped in Cauldron");
             Debug.Log(ingred.IngredientName + " has been added.");
