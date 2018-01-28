@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 224322928969359092}
   - component: {fileID: 222185817620002434}
   - component: {fileID: 114742768236849172}
+  - component: {fileID: 114404103350919936}
   m_Layer: 0
   m_Name: Help
   m_TagString: Untagged
@@ -200,8 +201,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1392567427869898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -5.09, z: 0}
-  m_LocalScale: {x: 0.83595896, y: 0.58842087, z: 1}
+  m_LocalPosition: {x: 0.16, y: -3.98, z: 0}
+  m_LocalScale: {x: 1.0767788, y: 0.9526497, z: 1}
   m_Children: []
   m_Father: {fileID: 4921449380666524}
   m_RootOrder: 4
@@ -350,6 +351,18 @@ MonoBehaviour:
   type: 0
   cauldronColor: {r: 0, g: 0, b: 0, a: 0}
   compatibleIngredients: []
+--- !u!114 &114404103350919936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553173230843480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.2
 --- !u!114 &114716052536299442
 MonoBehaviour:
   m_ObjectHideFlags: 1

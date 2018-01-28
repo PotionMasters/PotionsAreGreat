@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum PanelType { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
-public enum Difficulty { Easy, Normal, Master }
+public enum Difficulty { Beginner, Normal, Master }
 
 public class GameManager : MonoBehaviour
 {
-    private int[] timeLimitsEasy = new int[7] { 0, 20, 20, 0, 20, 20, 0 };
+    private int[] timeLimitsBeginner = new int[7] { 0, 20, 20, 0, 20, 20, 0 };
     private int[] timeLimitsNormal = new int[7] { 0, 10, 10, 0, 10, 10, 0 };
     private int[] timeLimitsMaster = new int[7] { 0, 5, 5, 0, 5, 5, 0 };
     private Difficulty difficulty;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public float GetTimeLeft()
     {
         float limit =
-            difficulty == Difficulty.Easy ? timeLimitsEasy[(int)panelType] :
+            difficulty == Difficulty.Beginner ? timeLimitsBeginner[(int)panelType] :
             difficulty == Difficulty.Normal ? timeLimitsNormal[(int)panelType] :
             difficulty == Difficulty.Master ? timeLimitsMaster[(int)panelType] : 0;
 
@@ -74,9 +74,9 @@ public class GameManager : MonoBehaviour
 
         if (panelType == PanelType.Menu)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.B))
             {
-                difficulty = Difficulty.Easy;
+                difficulty = Difficulty.Beginner;
                 AdvancePanel();
             }
             if (Input.GetKeyDown(KeyCode.N))
