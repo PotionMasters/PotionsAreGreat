@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 224118082685975568}
   - component: {fileID: 222131109227866410}
   - component: {fileID: 114064122344508782}
+  - component: {fileID: 114522875490690996}
   m_Layer: 0
   m_Name: Help
   m_TagString: Untagged
@@ -269,6 +270,7 @@ GameObject:
   - component: {fileID: 224089696751828872}
   - component: {fileID: 222904557240887118}
   - component: {fileID: 114358450348619902}
+  - component: {fileID: 114066453664586512}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -780,6 +782,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Player 2: Mix the correct potion.'
+--- !u!114 &114066453664586512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910593575715716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.2
 --- !u!114 &114358450348619902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -843,8 +857,21 @@ MonoBehaviour:
   waterPoint: {fileID: 0}
   liquidSprite: {fileID: 212708448332981204}
   roomLightSprite: {fileID: 212651842655941020}
+  finalBottleLiquid: {fileID: 0}
   heldIngredients: 
   heat: 100
+--- !u!114 &114522875490690996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532080847268186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.2
 --- !u!114 &114779332877112568
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,6 +9,7 @@ public class Cauldron : MonoBehaviour
     public Transform waterPoint;
     public SpriteRenderer liquidSprite;
     public SpriteRenderer roomLightSprite;
+    public SpriteRenderer finalBottleLiquid;
 
     [SerializeField] List<IngredientType> heldIngredients;
     public List<IngredientType> HeldIngredients { get; private set; }
@@ -97,6 +98,8 @@ public class Cauldron : MonoBehaviour
 
     private IEnumerator LiquidColorRoutine(Color color)
     {
+        finalBottleLiquid.color = color;
+
         Color c0 = liquidSprite.color;
         for (float t = 0; t < 1; t += Time.deltaTime / 0.3f)
         {
