@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  cauldronColor: {r: 1, g: 1, b: 1, a: 1}
+  cauldronColor: {r: 0.056498714, g: 0.6985294, b: 0.11406008, a: 1}
   compatibleIngredients: []
 --- !u!114 &114081210198958412
 MonoBehaviour:

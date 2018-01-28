@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 9
-  cauldronColor: {r: 1, g: 1, b: 1, a: 1}
+  cauldronColor: {r: 0.91321737, g: 0.056660898, b: 0.9632353, a: 1}
   compatibleIngredients: []
 --- !u!212 &212875040636747122
 SpriteRenderer:
