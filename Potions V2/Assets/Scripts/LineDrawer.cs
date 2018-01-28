@@ -6,21 +6,17 @@ public class LineDrawer : MonoBehaviour
 {
     public AnimationCurve falloff;
     public float falloffRadius = 2;
+    public LineRenderer linePrefab;
 
-    private LineRenderer line;
+    private List<LineRenderer> lines = new List<LineRenderer>();
     private Vector2 lastVert;
+
     private bool drawing = false;
+    private int lineIndex = -1;
+
     private const float vertDistance = 0.25f;
-    private const int maxVerts = 300;
+    private const int maxVerts = 500;
 
-    public AnimationCurve curve;
-
-
-    private void Awake()
-    {
-        line = GetComponent<LineRenderer>();
-        line.positionCount = 0;
-    }
     private void Update()
     {
         bool mouseDown = Input.GetKey(KeyCode.Mouse0);
@@ -30,33 +26,46 @@ public class LineDrawer : MonoBehaviour
         {
             if (!drawing)
             {
-                line.positionCount = 0;
+                // Start Drawing
                 drawing = true;
+
+                LineRenderer line = Instantiate(linePrefab);
+                line.transform.SetParent(transform);
+                lines.Add(line);
+                line.positionCount = 0;
+                ++lineIndex;
+
                 PlaceVertex(mousePos);
             }
             else if (Vector2.Distance(lastVert, mousePos) > vertDistance)
             {
+                // Continue Drawing
                 PlaceVertex(mousePos);
             }
         }
         else if (drawing)
         {
+            // Stop drawing
             drawing = false;
         }
 
-        UpdateLineWidth();
+        foreach (LineRenderer line in lines)
+        {
+            UpdateLineWidth(line);
+        }
     }
     private void PlaceVertex(Vector2 pos)
     {
-        if (line.positionCount < maxVerts)
+        if (GetTotalVerts() < maxVerts)
         {
-            int i = line.positionCount;
-            line.positionCount += 1;
-            line.SetPosition(i, pos);
+            int i = lines[lineIndex].positionCount;
+            lines[lineIndex].positionCount += 1;
+            lines[lineIndex].SetPosition(i, pos);
+            lastVert = pos;
         }
     }
 
-    private void UpdateLineWidth()
+    private void UpdateLineWidth(LineRenderer line)
     {
         Keyframe[] keys = new Keyframe[line.positionCount];
         for (int i = 0; i < keys.Length; ++i)
@@ -69,5 +78,15 @@ public class LineDrawer : MonoBehaviour
             keys[i] = new Keyframe(i_float, falloff.Evaluate(t) * mult);
         }
         line.widthCurve = new AnimationCurve(keys);
+    }
+
+    private int GetTotalVerts()
+    {
+        int count = 0;
+        foreach (LineRenderer line in lines)
+        {
+            count += line.positionCount;
+        }
+        return count;
     }
 }
