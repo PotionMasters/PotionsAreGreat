@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114788316028885106}
   - component: {fileID: 61104553867071986}
   - component: {fileID: 50110049703708898}
+  - component: {fileID: 114938525035680458}
   m_Layer: 0
   m_Name: Twig
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 0}
   destroyEffect: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 2}
+--- !u!114 &114938525035680458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135756071090814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!212 &212899341706996622
 SpriteRenderer:
   m_ObjectHideFlags: 1

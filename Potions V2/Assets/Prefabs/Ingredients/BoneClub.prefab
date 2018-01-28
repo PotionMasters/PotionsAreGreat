@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114857709413454722}
   - component: {fileID: 61545340750861960}
   - component: {fileID: 50697929279498060}
+  - component: {fileID: 114231999715061536}
   m_Layer: 0
   m_Name: BoneClub
   m_TagString: Untagged
@@ -132,6 +133,18 @@ MonoBehaviour:
   pickupEffect: {fileID: 0}
   destroyEffect: {fileID: 1965343156803978, guid: aa8d6482d70a23445b4b2a928ed1b845,
     type: 2}
+--- !u!114 &114231999715061536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273649151723444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!114 &114857709413454722
 MonoBehaviour:
   m_ObjectHideFlags: 1

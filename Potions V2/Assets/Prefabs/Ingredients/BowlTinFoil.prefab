@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114054723598414578}
   - component: {fileID: 61910007243901656}
   - component: {fileID: 50990400128451060}
+  - component: {fileID: 114685751930783492}
   m_Layer: 0
   m_Name: BowlTinFoil
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 0}
   destroyEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 2}
+--- !u!114 &114685751930783492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955097572998668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!212 &212998793087222200
 SpriteRenderer:
   m_ObjectHideFlags: 1

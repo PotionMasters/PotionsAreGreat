@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114490589931293008}
   - component: {fileID: 61019900955890574}
   - component: {fileID: 50739292381123222}
+  - component: {fileID: 114264440787532878}
   m_Layer: 0
   m_Name: Bottle_2
   m_TagString: Untagged
@@ -132,6 +133,18 @@ MonoBehaviour:
   pickupEffect: {fileID: 1781930563638536, guid: daa6cceb1b087d74aad6916dac2805ea,
     type: 2}
   destroyEffect: {fileID: 100000, guid: d4f5579fb5da2f646a0c2bee91bdf6b5, type: 2}
+--- !u!114 &114264440787532878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771121362473270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!114 &114490589931293008
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -53,8 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515cd85d571de974b9cf3597fca726dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTheme: {fileID: 8300000, guid: f9d603a0569c2574985cf8513b528207, type: 3}
-  menuTheme: {fileID: 0}
+  menuTheme: {fileID: 8300000, guid: 4e5a221cbfb6fe44b930ebf83729ee10, type: 3}
+  player1Music: {fileID: 8300000, guid: 7dfb8efed87a0b440a4c8322da692b10, type: 3}
+  switchMusic: {fileID: 8300000, guid: 4bcccba6944160645a89643982b45da1, type: 3}
+  player2Music: {fileID: 8300000, guid: 9aa684650530a154ca43afeae81c3733, type: 3}
+  endMusic: {fileID: 8300000, guid: 4e5a221cbfb6fe44b930ebf83729ee10, type: 3}
+  fadeTime: 0.1
 --- !u!114 &114667615583632894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVolumePercent: 1
   sfxVolumePercent: 1
-  musicVolumePercent: 1
+  musicVolumePercent: 0.2
 --- !u!114 &114813317918349274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,3 +107,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 422ead040b874bb4da14db4d27cfb9bc, type: 3}
     - {fileID: 8300000, guid: ed7979cca68b1eb44ab872beb92e74c0, type: 3}
     - {fileID: 8300000, guid: fa6cba83a4316904f9489e7d058b2c15, type: 3}
+  - groupID: SlideTransition
+    group:
+    - {fileID: 8300000, guid: ba635e76622cb744db6cd88ae4e7316f, type: 3}
+    - {fileID: 8300000, guid: 3e969299239237744ad2103b433e8945, type: 3}
+    - {fileID: 8300000, guid: 69d219f8f5078444d9441978138dbbcf, type: 3}
+    - {fileID: 8300000, guid: 78ddc677ca7f24e4e91f4c65dcc92397, type: 3}
+    - {fileID: 8300000, guid: 7d44cc8af9fb315479cf150de7f21537, type: 3}
+    - {fileID: 8300000, guid: 2fbafede4a6491e499d6dd311e36f1ee, type: 3}

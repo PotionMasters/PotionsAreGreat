@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114159030490825528}
   - component: {fileID: 61318488346235106}
   - component: {fileID: 50382107488213968}
+  - component: {fileID: 114160088732046186}
   m_Layer: 0
   m_Name: TinFoil
   m_TagString: Untagged
@@ -146,6 +147,18 @@ MonoBehaviour:
   type: 11
   cauldronColor: {r: 1, g: 1, b: 1, a: 1}
   compatibleIngredients: []
+--- !u!114 &114160088732046186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1186991048822232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!212 &212677390557168526
 SpriteRenderer:
   m_ObjectHideFlags: 1

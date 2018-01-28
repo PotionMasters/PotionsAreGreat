@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114374011355095852}
   - component: {fileID: 61684341444669732}
   - component: {fileID: 50144785644508728}
+  - component: {fileID: 114889356695312210}
   m_Layer: 0
   m_Name: OkaySign
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 2}
   destroyEffect: {fileID: 0}
+--- !u!114 &114889356695312210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699559086706342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!212 &212634271920226102
 SpriteRenderer:
   m_ObjectHideFlags: 1

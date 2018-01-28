@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114331143305913944}
   - component: {fileID: 61694197449949408}
   - component: {fileID: 50130854603359822}
+  - component: {fileID: 114876804147667864}
   m_Layer: 0
   m_Name: Turnip
   m_TagString: Untagged
@@ -146,6 +147,18 @@ MonoBehaviour:
   pickupEffect: {fileID: 0}
   destroyEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
     type: 2}
+--- !u!114 &114876804147667864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672453868576778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.3
 --- !u!212 &212636125432493128
 SpriteRenderer:
   m_ObjectHideFlags: 1

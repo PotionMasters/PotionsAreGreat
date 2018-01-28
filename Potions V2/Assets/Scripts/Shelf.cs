@@ -20,10 +20,12 @@ public class Shelf : MonoBehaviour
         for (int i = 0; i < n / 2; ++i)
         {
             shuffled[i].transform.position = spawnPointsLeft[0].position + Vector3.right * (3 * i);
+            shuffled[i].GetComponent<Hover>().enabled = false;
         }
         for (int i = 0; i < n / 2; ++i)
         {
             shuffled[i + (n / 2)].transform.position = spawnPointsLeft[1].position + Vector3.right * (3 * i);
+            shuffled[i].GetComponent<Hover>().enabled = false;
         }
     }
 
