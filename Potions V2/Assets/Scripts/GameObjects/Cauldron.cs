@@ -5,10 +5,20 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour {
 
     [SerializeField] List<Ingredient> heldIngredients;
-    [SerializeField] Recipe currentRecipe;
+    private Recipe currentRecipe;
     
     [Header("Cauldron Properties")]
     [SerializeField] int heat = 100;
+
+
+    private void Awake()
+    {
+        currentRecipe = FindObjectOfType<Recipe>();
+        if (currentRecipe == null)
+        {
+            Debug.LogError("Missing recipe");
+        }
+    }
 
     public List<Ingredient> HeldIngredients
     {
@@ -23,7 +33,6 @@ public class Cauldron : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         if(currentRecipe.RequiredIngredients.Count == 0)

@@ -44,18 +44,28 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SetPanel(Panel.Menu, true);
+                AdvancePanel();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            AdvancePanel();
         }
     }
 
     private void AdvancePanel()
     {
+        if (panel == Panel.End)
+        {
+            SetPanel(Panel.Menu, true);
+        }
         SetPanel(panel + 1);
     }
 
     private void SetPanel(Panel panel, bool immediate=false)
     {
+        Debug.Log("Set panel " + panel.ToString());
         StartCoroutine(TransitionRoutine(panel, immediate));
     }
 
@@ -65,16 +75,20 @@ public class GameManager : MonoBehaviour
         Transform panel1 = panelEntities[(int)newPanel].transform;
 
         panel = newPanel;
-        panel1.gameObject.SetActive(false);
+        panel1.gameObject.SetActive(true);
         panelStartTime = Time.timeSinceLevelLoad;
 
-        float duration = immediate ? 0 : 1;
+        float duration = immediate ? 0 : 0.3f;
         for (float t = 0; ; t += Time.deltaTime / duration)
         {
             t = Mathf.Min(t, 1);
-            float tt = Mathf.Pow(t, 2);
+            float tt = Mathf.SmoothStep(0, 1, t);
 
-            Camera.main.transform.position = Vector3.Lerp(panel0.position, panel1.position, tt);
+            Vector3 pos = Camera.main.transform.position;
+            float z = pos.z;
+            pos = Vector3.Lerp(panel0.position, panel1.position, tt);
+            pos.z = z;
+            Camera.main.transform.position = pos;
 
             yield return null;
 
