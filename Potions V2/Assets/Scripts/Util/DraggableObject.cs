@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class DraggableObject : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject pickupEffect;
+
+    [SerializeField]
+    private GameObject destroyEffect;
+
     private Vector3 screenPoint;
     private Vector3 offset;
 
@@ -10,6 +16,12 @@ public class DraggableObject : MonoBehaviour {
     {
         //add sound
         Debug.Log("Sound!");
+
+        if (pickupEffect != null)
+        {
+            GameObject clone = Instantiate(pickupEffect, this.transform.position, transform.rotation);
+        }
+
         AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
@@ -23,6 +35,14 @@ public class DraggableObject : MonoBehaviour {
         float distance_to_screen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
 
+    }
+
+    public void DestroyEffect()
+    {
+        if (destroyEffect !=null)
+        {
+            GameObject clone = Instantiate(destroyEffect, this.transform.position, transform.rotation);
+        }
     }
 
     #region

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject waterSplash;
+    [SerializeField]
+    public Transform waterPoint;
+
     [SerializeField] List<Ingredient> heldIngredients;
     private Recipe currentRecipe;
     
@@ -50,14 +55,24 @@ public class Cauldron : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var ingred = collision.GetComponent<Ingredient>();
+        var effects = collision.GetComponent<DraggableObject>();
 
         heldIngredients.Add(ingred);
 
         if (currentRecipe.RequiredIngredients.Contains(ingred))
         {
             currentRecipe.RequiredIngredients.Remove(ingred);
+            effects.DestroyEffect();
+
             Destroy(ingred.gameObject);
+
             AudioManager.instance.PlaySound2D("Dropped in Cauldron");
+
+            if (waterSplash !=null)
+            {
+                GameObject clone = Instantiate(waterSplash, waterPoint);
+            }
+
             Debug.Log(ingred.IngredientName + " has been added.");
         }
     }
