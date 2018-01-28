@@ -115,3 +115,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 78ddc677ca7f24e4e91f4c65dcc92397, type: 3}
     - {fileID: 8300000, guid: 7d44cc8af9fb315479cf150de7f21537, type: 3}
     - {fileID: 8300000, guid: 2fbafede4a6491e499d6dd311e36f1ee, type: 3}
+  - groupID: BreakGlass
+    group:
+    - {fileID: 8300000, guid: a4d63a18d45fd874ba15532413f821a5, type: 3}
+    - {fileID: 8300000, guid: e58e466c25bf8574aae31aef110565e9, type: 3}

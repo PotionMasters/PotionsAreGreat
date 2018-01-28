@@ -28,6 +28,8 @@ public class EndPanel : MonoBehaviour
 
     private IEnumerator EffectRoutine()
     {
+        AudioManager.instance.PlaySound2D("BreakGlass");
+
         yield return new WaitForSeconds(1);
 
         if (failurePotionFX != null && deathFXPoint != null)
@@ -36,5 +38,6 @@ public class EndPanel : MonoBehaviour
             // effect
 
         }
+
     }
 }
