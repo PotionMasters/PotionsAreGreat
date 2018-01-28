@@ -10,7 +10,7 @@ public enum Difficulty { Easy, Normal, Master }
 
 public class GameManager : MonoBehaviour
 {
-    private int[] timeLimitsEasy = new int[7] { 0, 15, 15, 0, 15, 15, 0 };
+    private int[] timeLimitsEasy = new int[7] { 0, 20, 20, 0, 20, 20, 0 };
     private int[] timeLimitsNormal = new int[7] { 0, 10, 10, 0, 10, 10, 0 };
     private int[] timeLimitsMaster = new int[7] { 0, 5, 5, 0, 5, 5, 0 };
     private Difficulty difficulty;
