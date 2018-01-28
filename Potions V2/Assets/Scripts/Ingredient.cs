@@ -12,6 +12,7 @@ public class Ingredient : MonoBehaviour
             return type;
         }
     }
+    public Color cauldronColor;
 
     [SerializeField] List<Ingredient> compatibleIngredients;
 }

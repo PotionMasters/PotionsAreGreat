@@ -6,6 +6,8 @@ public class Cauldron : MonoBehaviour
 {
     private GameObject waterSplash;
     public Transform waterPoint;
+    public SpriteRenderer liquidSprite;
+    public SpriteRenderer roomLightSprite;
 
     [SerializeField] List<IngredientType> heldIngredients;
     public List<IngredientType> HeldIngredients { get; private set; }
@@ -65,26 +67,41 @@ public class Cauldron : MonoBehaviour
         if (ingredient != null)
         {
             AudioManager.instance.PlaySound2D("Dropped in Cauldron");
-            AddIngredient(ingredient.Type);
+            AddIngredient(ingredient);
             Splash();
             Destroy(ingredient.gameObject);
             //effects.DestroyEffect();
         }
     }
 
-    private void AddIngredient(IngredientType ingredient)
+    private void AddIngredient(Ingredient ingredient)
     {
-        heldIngredients.Add(ingredient);
+        heldIngredients.Add(ingredient.Type);
         if (onIngredientAdded != null)
         {
-            onIngredientAdded(ingredient);
+            onIngredientAdded(ingredient.Type);
+            StartCoroutine(LiquidColorRoutine(ingredient.cauldronColor));
         }
     }
+
     private void Splash()
     {
         if (waterSplash != null)
         {
             Instantiate(waterSplash, waterPoint);
+        }
+    }
+
+    private IEnumerator LiquidColorRoutine(Color color)
+    {
+        Color c0 = liquidSprite.color;
+        for (float t = 0; t < 1; t += Time.deltaTime / 0.3f)
+        {
+            liquidSprite.color = Color.Lerp(c0, color, t);
+            Color roomTint = liquidSprite.color;
+            roomTint.a = roomLightSprite.color.a;
+            roomLightSprite.color = roomTint;
+            yield return null;
         }
     }
 }
