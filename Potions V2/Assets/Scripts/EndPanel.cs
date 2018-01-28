@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EndPanel : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject failurePotionFX;
+    [SerializeField]
+    private Transform deathFXPoint;
+
     public Transform winParent, loseParent;
 
     public void Show()
@@ -25,6 +30,11 @@ public class EndPanel : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        // effect
+        if (failurePotionFX != null && deathFXPoint != null)
+        {
+            GameObject clone = Instantiate(failurePotionFX, deathFXPoint.position, failurePotionFX.transform.rotation);
+            // effect
+
+        }
     }
 }
