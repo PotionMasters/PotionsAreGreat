@@ -62,14 +62,15 @@ public class Cauldron : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        var ingredient = collider.GetComponent<Ingredient>();
-       var effects = collider.GetComponent<DraggableObject>();
+        Ingredient ingredient = collider.GetComponent<Ingredient>();
 
         if (ingredient != null)
         {
             AudioManager.instance.PlaySound2D("Dropped in Cauldron");
             AddIngredient(ingredient);
             Splash();
+
+            DraggableObject effects = collider.GetComponent<DraggableObject>();
             effects.DestroyEffect();
 
             Destroy(ingredient.gameObject);
@@ -79,10 +80,10 @@ public class Cauldron : MonoBehaviour
     private void AddIngredient(Ingredient ingredient)
     {
         heldIngredients.Add(ingredient.Type);
+        StartCoroutine(LiquidColorRoutine(ingredient.cauldronColor));
         if (onIngredientAdded != null)
         {
             onIngredientAdded(ingredient.Type);
-            StartCoroutine(LiquidColorRoutine(ingredient.cauldronColor));
         }
     }
 

@@ -142,7 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9dbf2fc9212114faa656876c3b00b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 7
+  type: 9
+  cauldronColor: {r: 1, g: 1, b: 1, a: 1}
   compatibleIngredients: []
 --- !u!212 &212875040636747122
 SpriteRenderer:
