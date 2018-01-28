@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9dbf2fc9212114faa656876c3b00b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
+  type: 7
+  cauldronColor: {r: 1, g: 0.45740366, b: 0.21323532, a: 1}
   compatibleIngredients: []
 --- !u!114 &114687320928299834
 MonoBehaviour:

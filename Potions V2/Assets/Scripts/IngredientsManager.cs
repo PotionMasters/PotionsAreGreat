@@ -6,8 +6,10 @@ public enum IngredientType
 {
     BoneClub,
     Bottle,
+    Bottle2,
     BowlTinFoil,
     Cheese,
+    Cheese2,
     Leaf,
     Mushroom,
     OkaySign,
