@@ -42,9 +42,14 @@ public class GameManager : MonoBehaviour
         GameWon = false;
         panelType = PanelType.Menu;
         GoalRecipe = Recipe.Random(3, FindObjectOfType<IngredientsManager>());
-        cauldron.onIngredientAdded += OnCauldronAddIngredient;
+        theMusic = FindObjectOfType<MusicManager>();
 
-        theMusic = FindObjectOfType<MusicManager>(); 
+        Debug.Log("GOAL = " + GoalRecipe.Ingredients[0] + ", " + GoalRecipe.Ingredients[1] + ", " + GoalRecipe.Ingredients[2]);
+    }
+
+    private void Start()
+    {
+        cauldron.onIngredientAdded += OnCauldronAddIngredient;
     }
 
     private void Update()
@@ -53,14 +58,15 @@ public class GameManager : MonoBehaviour
         {
             if (GetTimeLeft() <= 0)
             {
-                AdvancePanelType();
+                AdvancePanel();
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //HandleMusic();
 
-            AdvancePanelType();
+            AdvancePanel();
         }
 
         // Timer
@@ -114,8 +120,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void AdvancePanelType()
+    private void AdvancePanel()
     {
+        // HACK
+        if (panelType == PanelType.Cauldron)
+        {
+            panels[panels.Length - 1].GetComponent<EndPanel>().Show();
+            SetPanelType(panelType + 1, 2.5f);
+            return;
+        }
+
         if (panelType == PanelType.End)
         {
             SceneManager.LoadScene(0);
@@ -126,16 +140,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetPanelType(PanelType PanelType, bool immediate=false)
+    private void SetPanelType(PanelType PanelType, float duration = 0.3f)
     {
-        Debug.Log("Set PanelType " + PanelType.ToString());
-
-        AudioManager.instance.PlaySound2D("SlideTransition");
-
-        StartCoroutine(TransitionRoutine(PanelType, immediate));
+        StartCoroutine(TransitionRoutine(PanelType, duration));
     }
 
-    private IEnumerator TransitionRoutine(PanelType newPanelType, bool immediate=false)
+    private IEnumerator TransitionRoutine(PanelType newPanelType, float duration)
     {
         Transform panel0 = panels[(int)panelType].transform;
         Transform panel1 = panels[(int)newPanelType].transform;
@@ -146,7 +156,7 @@ public class GameManager : MonoBehaviour
         panel1.gameObject.SetActive(true);
         panelStartTime = Time.timeSinceLevelLoad;
 
-        float duration = immediate ? 0 : 0.3f;
+        duration = Mathf.Max(duration, 0.01f);
         for (float t = 0; ; t += Time.deltaTime / duration)
         {
             t = Mathf.Min(t, 1);
@@ -184,7 +194,7 @@ public class GameManager : MonoBehaviour
             Vector3 oldPos = lineDrawer.transform.position;
             lineDrawer.transform.SetParent(crystalBall2.transform, false);
             lineDrawer.Move(lineDrawer.transform.position - oldPos);
-            
+
         }
     }
 
@@ -193,13 +203,15 @@ public class GameManager : MonoBehaviour
         if (!cauldron.IsPotionCorrectSoFar(GoalRecipe))
         {
             // Fail
-            AdvancePanelType();
+            Debug.Log("FAIL (incorrect ingredients)");
+            AdvancePanel();
         }
         else if (cauldron.IsPotionCorrect(GoalRecipe))
         {
             // Win
+            Debug.Log("WIN");
             GameWon = true;
-            AdvancePanelType();
+            AdvancePanel();
         }
     }
 }
