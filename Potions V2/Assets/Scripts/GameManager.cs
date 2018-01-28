@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public enum Panel { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
 
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
         return Mathf.Max(0, panelTimeLimits[(int)panel] - (Time.timeSinceLevelLoad - panelStartTime));
     }
 
-    private void Start()
+    private void Awake()
     {
         panel = Panel.Menu;
     }
@@ -59,9 +60,12 @@ public class GameManager : MonoBehaviour
     {
         if (panel == Panel.End)
         {
-            SetPanel(Panel.Menu, true);
+            SceneManager.LoadScene(0);
         }
-        SetPanel(panel + 1);
+        else
+        {
+            SetPanel(panel + 1);
+        }
     }
 
     private void SetPanel(Panel panel, bool immediate=false)
