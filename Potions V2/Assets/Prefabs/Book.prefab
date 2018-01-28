@@ -19,11 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4454153587349946}
-  - component: {fileID: 114406437468630916}
-  - component: {fileID: 114396352743545914}
   - component: {fileID: 61867082686660434}
   - component: {fileID: 50524026343888536}
-  - component: {fileID: 114691770773492794}
+  - component: {fileID: 114340073394382974}
+  - component: {fileID: 114720617811134554}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -119,31 +118,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.7425804, y: 1.4502745}
   m_EdgeRadius: 0
---- !u!114 &114396352743545914
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1233578023555792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9dbf2fc9212114faa656876c3b00b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientName: Book
-  compatibleIngredients: []
---- !u!114 &114406437468630916
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1233578023555792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80ac254f7f7e684999d04ecd38fbdb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114691770773492794
+--- !u!114 &114340073394382974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -154,10 +129,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5588e86524febc47b7139fbfb46ad93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredIngredients:
+  ingredients:
+  - {fileID: 114857709413454722, guid: a45f620a941bb8142b54f037d4470844, type: 2}
+  - {fileID: 114490589931293008, guid: 35dc0ecb17b677d4387a8aad221640f2, type: 2}
+  - {fileID: 114054723598414578, guid: bb1ffd4cc42c9384681bf65737d65b2f, type: 2}
+  - {fileID: 114268092357311306, guid: deb5babb315153c438e49715356f8db0, type: 2}
+  - {fileID: 114236128026184694, guid: 73c808b2cf3e2a846b0eb1771521801c, type: 2}
   - {fileID: 114361335271422500, guid: 346ef37e3f67bc649818719018f73581, type: 2}
+  - {fileID: 114229262899503526, guid: d60304ab9de9b0a49b864842c1fe7d1a, type: 2}
+  - {fileID: 114374011355095852, guid: 6b9e216962547df4f8b75a4d74f45248, type: 2}
+  - {fileID: 114580743897529478, guid: 6abbf3ab55dfd4d43836526fabe3c0af, type: 2}
+  - {fileID: 114594679971184972, guid: 210c7acbc3211bb4299eaf20669c10a8, type: 2}
   - {fileID: 114159030490825528, guid: 3204b1a4016578c41a0cb428dd2feba9, type: 2}
+  - {fileID: 114331143305913944, guid: cace0768ea2feb740b28ed7bba1d27d6, type: 2}
+  - {fileID: 114788316028885106, guid: b9ad3e77fed4ae648b62395917bd0ab1, type: 2}
   - {fileID: 114104861867339396, guid: 3bf5b6b4034ccc04b8bc601a92493763, type: 2}
+--- !u!114 &114720617811134554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233578023555792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1a68eb85c722d4b922f8aa296b003b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookBook: {fileID: 114340073394382974}
+  requiredIngredients: []
+  buffer: 3
 --- !u!212 &212049456580530338
 SpriteRenderer:
   m_ObjectHideFlags: 1

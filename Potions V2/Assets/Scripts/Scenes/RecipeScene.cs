@@ -23,7 +23,7 @@ public class RecipeScene : MonoBehaviour
     {
         if(recipe != null)
         {
-            foreach (var ingred in recipe.RequiredIngredients)
+            foreach (var ingred in recipe.Ingredients)
             {
                 Instantiate(ingred, Vector3.zero, Quaternion.identity, book.transform);
             }
