@@ -2,7 +2,7 @@
 
 public class MusicManager : MonoBehaviour {
 
-    public AudioClip mainTheme;
+    //public AudioClip mainTheme;
     public AudioClip menuTheme;
     public AudioClip player1Music;
     public AudioClip switchMusic;
