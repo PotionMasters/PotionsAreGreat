@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
         if (panelType == PanelType.Cauldron)
         {
             panels[panels.Length - 1].GetComponent<EndPanel>().Show();
-            SetPanelType(panelType + 1, 2.5f);
+            SetPanelType(panelType + 1, 2.0f, 2.0f);
             return;
         }
 
@@ -160,13 +160,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetPanelType(PanelType PanelType, float duration = 0.3f)
+    private void SetPanelType(PanelType PanelType, float duration = 0.3f, float delay = 0)
     {
-        StartCoroutine(TransitionRoutine(PanelType, duration));
+        AudioManager.instance.PlaySound2D("SlideTransition");
+        StartCoroutine(TransitionRoutine(PanelType, duration, delay));
     }
 
-    private IEnumerator TransitionRoutine(PanelType newPanelType, float duration)
+    private IEnumerator TransitionRoutine(PanelType newPanelType, float duration, float delay)
     {
+        yield return new WaitForSeconds(delay);
+
         Transform panel0 = panels[(int)panelType].transform;
         Transform panel1 = panels[(int)newPanelType].transform;
 
@@ -214,7 +217,6 @@ public class GameManager : MonoBehaviour
             Vector3 oldPos = lineDrawer.transform.position;
             lineDrawer.transform.SetParent(crystalBall2.transform, false);
             lineDrawer.Move(lineDrawer.transform.position - oldPos);
-
         }
     }
 

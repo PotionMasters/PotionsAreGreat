@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,23 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &43320397 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1532080847268186, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1546361723}
---- !u!114 &43320401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 43320397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensity: 0.2
 --- !u!1001 &56135260
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,23 +479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0.2
---- !u!1 &494176807 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1910593575715716, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1546361723}
---- !u!114 &494176811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 494176807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfe7179137ecd048bd96835c504b8aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensity: 0.2
 --- !u!1 &519866920 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1245212192258820, guid: b89e95759fb8f8a45aac66954547d671,
@@ -743,6 +709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8142e8a7f7bd0f4ebbc1dd4a8c07d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &880185253 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212448436434505516, guid: 8ec8d3598288a5a4c888f8b66c22defb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1564791653}
 --- !u!1 &907005222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,44 +1250,11 @@ Prefab:
       propertyPath: waterPoint
       value: 
       objectReference: {fileID: 541519672}
-    - target: {fileID: 114064122344508782, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
+    - target: {fileID: 114506026138929102, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
         type: 2}
-      propertyPath: m_Text
-      value: 'Player 2: Mix the correct potion.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895873082690784, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895873082690784, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421276030194930, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421276030194930, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358450348619902, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_FontData.m_Font
+      propertyPath: finalBottleLiquid
       value: 
-      objectReference: {fileID: 12800000, guid: 1a74d8307f96e724887c96ffab87b1f7,
-        type: 3}
-    - target: {fileID: 114064122344508782, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 1a74d8307f96e724887c96ffab87b1f7,
-        type: 3}
-    - target: {fileID: 224089696751828872, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 880185253}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
   m_IsPrefabParent: 0
