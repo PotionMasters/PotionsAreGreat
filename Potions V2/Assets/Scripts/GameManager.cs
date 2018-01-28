@@ -53,8 +53,12 @@ public class GameManager : MonoBehaviour
         }
 
         // Timer
-        //int seconds = Mathf.CeilToInt(GetTimeLeft());
-        //timerText.text = seconds > 0 ? seconds.ToString() : "";
+        Text timerText = panels[(int)panelType].timerText;
+        if (timerText != null)
+        {
+            int seconds = Mathf.CeilToInt(GetTimeLeft());
+            timerText.text = seconds > 0 ? seconds.ToString() : "";
+        }
     }
 
     private void AdvancePanelType()

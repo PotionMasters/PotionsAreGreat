@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FxTemporaire
   - SPAWNED_OBJECT
+  - Timer
   layers:
   - Default
   - TransparentFX
