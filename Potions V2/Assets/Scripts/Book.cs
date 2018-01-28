@@ -19,7 +19,8 @@ public class Book : MonoBehaviour
         Ingredient[] spawns = ingredMgr.SpawnIngredients(gm.GoalRecipe.Ingredients);
         for (int i = 0; i < spawns.Length; ++i)
         {
-            spawns[i].transform.position = transform.position + Vector3.up * (4 * i + baseOffset);
+            int j = spawns.Length - 1 - i;
+            spawns[j].transform.position = transform.position + Vector3.up * (4 * i + baseOffset);
         }
     }
 

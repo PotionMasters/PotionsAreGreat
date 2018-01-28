@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1576086916293830
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 33647094904680456}
   - component: {fileID: 23230697885142306}
   - component: {fileID: 114137411382218702}
+  - component: {fileID: 114535660519906028}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -206,7 +207,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 72
+    m_MaxSize: 172
     m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95d94b8b452ce04289b26df1d868230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
 --- !u!114 &114494914433203246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,6 +260,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: An unmitigated disaster. Try again you two.
+--- !u!114 &114535660519906028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576086916293830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059673dfc023b1d418fb972c38592820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winParent: {fileID: 224239325967957050}
+  loseParent: {fileID: 224655700649646090}
 --- !u!114 &114722229469257614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,11 +294,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 72
+    m_FontSize: 172
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 72
+    m_MaxSize: 172
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
