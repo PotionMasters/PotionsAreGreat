@@ -565,7 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059673dfc023b1d418fb972c38592820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failurePotionFX: {fileID: 0}
+  failurePotionFX: {fileID: 1965343156803978, guid: aa8d6482d70a23445b4b2a928ed1b845,
+    type: 2}
   deathFXPoint: {fileID: 0}
   winParent: {fileID: 4847539991274450}
   loseParent: {fileID: 4294645716198274}
