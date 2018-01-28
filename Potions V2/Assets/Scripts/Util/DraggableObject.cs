@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class DraggableObject : MonoBehaviour {
 
- 
+
+    public bool draggable = true;
 
     [SerializeField]
     private GameObject pickupEffect;
@@ -18,26 +19,34 @@ public class DraggableObject : MonoBehaviour {
 
     void OnMouseDown()
     {
-        //add sound
-        Debug.Log("Sound!");
-
-        if (pickupEffect != null)
+        if (draggable)
         {
-            GameObject clone = Instantiate(pickupEffect, this.transform.position, transform.rotation);
+            //add sound
+            Debug.Log("Sound!");
+
+            if (pickupEffect != null)
+            {
+                GameObject clone = Instantiate(pickupEffect, this.transform.position, transform.rotation);
+            }
+
+            //AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
+            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         }
 
-        //AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
     }
 
     void OnMouseDrag()//seems simplest solution
     {
-        //add a dragging sound?
-        float distance_to_screen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
+        if (draggable)
+        {
+            //add a dragging sound?
+            float distance_to_screen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+            transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
+        }
+     
 
     }
 

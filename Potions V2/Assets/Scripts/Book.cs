@@ -21,6 +21,8 @@ public class Book : MonoBehaviour
         {
             int j = spawns.Length - 1 - i;
             spawns[j].transform.position = transform.position + Vector3.up * (4 * i + baseOffset);
+            spawns[j].GetComponent<DraggableObject>().draggable = false;
+            spawns[j].GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
 
