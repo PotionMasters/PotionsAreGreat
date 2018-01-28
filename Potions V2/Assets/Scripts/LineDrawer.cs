@@ -17,6 +17,22 @@ public class LineDrawer : MonoBehaviour
     private const float vertDistance = 0.25f;
     private const int maxVerts = 500;
 
+    
+    public void Move(Vector3 translation)
+    {
+        foreach (LineRenderer line in lines)
+        {
+            for (int i = 0; i < line.positionCount; ++i)
+            {
+                line.SetPosition(i, line.GetPosition(i) + translation);
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        //FindObjectOfType<GameManager>().onTransition = OnTransition;
+    }
     private void Update()
     {
         bool mouseDown = Input.GetKey(KeyCode.Mouse0);
@@ -64,7 +80,6 @@ public class LineDrawer : MonoBehaviour
             lastVert = pos;
         }
     }
-
     private void UpdateLineWidth(LineRenderer line)
     {
         Keyframe[] keys = new Keyframe[line.positionCount];
@@ -79,6 +94,14 @@ public class LineDrawer : MonoBehaviour
         }
         line.widthCurve = new AnimationCurve(keys);
     }
+
+    //private void OnTransition(Transform panel0, Transform panel1, float t)
+    //{
+    //    if (panel0 == GetComponentInParent<Panel>())
+    //    {
+    //        // Transition out
+    //    }
+    //}
 
     private int GetTotalVerts()
     {

@@ -4,84 +4,92 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public enum Panel { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
+public enum PanelType { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] panelEntities;
-    public int[] panelTimeLimits;
+    public GameObject[] PanelTypeEntities;
+    public int[] PanelTypeTimeLimits;
 
-    private Panel panel;
-    private float panelStartTime;
+    public LineDrawer lineDrawer;
+    public Transform crystalBall2;
 
-    public Animator timerAnimator;
+    private PanelType panelType;
+    private float PanelTypeStartTime;
+
+    public System.Action<Transform, Transform, float> onTransition; // panel0, panel1, t
+
+
+
 
     public float GetTimeLeft()
     {
-        return Mathf.Max(0, panelTimeLimits[(int)panel] - (Time.timeSinceLevelLoad - panelStartTime));
+        return Mathf.Max(0, PanelTypeTimeLimits[(int)panelType] - (Time.timeSinceLevelLoad - PanelTypeStartTime));
     }
 
     private void Awake()
     {
-        panel = Panel.Menu;
+        panelType = PanelType.Menu;
     }
 
     private void Update()
     {
-        if (panel != Panel.Menu && panel != Panel.End && panel != Panel.Switch)
+        if (panelType != PanelType.Menu && panelType != PanelType.End && panelType != PanelType.Switch)
         {
             if (GetTimeLeft() <= 0)
             {
-                AdvancePanel();
+                AdvancePanelType();
             }
         }
-        else if (panel == Panel.Menu || panel == Panel.Switch)
+        else if (panelType == PanelType.Menu || panelType == PanelType.Switch)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                AdvancePanel();
+                AdvancePanelType();
             }
         }
-        else if (panel == Panel.End)
+        else if (panelType == PanelType.End)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                AdvancePanel();
+                AdvancePanelType();
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            AdvancePanel();
+            AdvancePanelType();
         }
     }
 
-    private void AdvancePanel()
+    private void AdvancePanelType()
     {
-        if (panel == Panel.End)
+        if (panelType == PanelType.End)
         {
             SceneManager.LoadScene(0);
         }
         else
         {
-            SetPanel(panel + 1);
+            SetPanelType(panelType + 1);
         }
     }
 
-    private void SetPanel(Panel panel, bool immediate=false)
+    private void SetPanelType(PanelType PanelType, bool immediate=false)
     {
-        Debug.Log("Set panel " + panel.ToString());
-        StartCoroutine(TransitionRoutine(panel, immediate));
+        Debug.Log("Set PanelType " + PanelType.ToString());
+        StartCoroutine(TransitionRoutine(PanelType, immediate));
     }
 
-    private IEnumerator TransitionRoutine(Panel newPanel, bool immediate=false)
+    private IEnumerator TransitionRoutine(PanelType newPanelType, bool immediate=false)
     {
-        Transform panel0 = panelEntities[(int)panel].transform;
-        Transform panel1 = panelEntities[(int)newPanel].transform;
+        Transform panel0 = PanelTypeEntities[(int)panelType].transform;
+        Transform panel1 = PanelTypeEntities[(int)newPanelType].transform;
 
-        panel = newPanel;
+        PanelType oldPanelType = panelType;
+
+        panelType = newPanelType;
         panel1.gameObject.SetActive(true);
-        panelStartTime = Time.timeSinceLevelLoad;
+        PanelTypeStartTime = Time.timeSinceLevelLoad;
 
         float duration = immediate ? 0 : 0.3f;
         for (float t = 0; ; t += Time.deltaTime / duration)
@@ -95,6 +103,11 @@ public class GameManager : MonoBehaviour
             pos.z = z;
             Camera.main.transform.position = pos;
 
+            if (onTransition != null)
+            {
+                onTransition(panel0, panel1, tt);
+            }
+
             yield return null;
 
             if (t >= 1)
@@ -103,7 +116,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        OnTransitionDone(oldPanelType, newPanelType);
         panel0.gameObject.SetActive(false);
     }
 
+    private void OnTransitionDone(PanelType oldPanel, PanelType newPanel)
+    {
+        if (newPanel == PanelType.Switch)
+        {
+            // Move Line drawing to other crystal ball
+            Vector3 oldPos = lineDrawer.transform.position;
+            lineDrawer.transform.SetParent(crystalBall2.transform, false);
+            lineDrawer.Move(lineDrawer.transform.position - oldPos);
+        }
+    }
 }

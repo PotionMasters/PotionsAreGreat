@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4885817804494484}
   - component: {fileID: 33132779771989118}
   - component: {fileID: 23384471917414806}
+  - component: {fileID: 114779332877112568}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -243,6 +244,17 @@ MonoBehaviour:
   waterPoint: {fileID: 4409216411917788}
   heldIngredients: []
   heat: 100
+--- !u!114 &114779332877112568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365402950964230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95d94b8b452ce04289b26df1d868230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212403356295428714
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -274,8 +286,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -413227349
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3ad2023d3a28bd54c9af58126b669203, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

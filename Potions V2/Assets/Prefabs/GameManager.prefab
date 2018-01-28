@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d227a9575d684b4faaa60529e2ada52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelEntities:
+  PanelTypeEntities:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -59,4 +59,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  panelTimeLimits: 000000000f0000000f000000000000000f0000000f00000000000000
+  PanelTypeTimeLimits: 000000000f0000000f000000000000000f0000000f00000000000000
+  lineDrawer: {fileID: 0}
+  crystalBall2: {fileID: 0}

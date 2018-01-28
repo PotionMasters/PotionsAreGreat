@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4371451532074340}
   - component: {fileID: 33647094904680456}
   - component: {fileID: 23230697885142306}
+  - component: {fileID: 114137411382218702}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -163,6 +164,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576086916293830}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114137411382218702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576086916293830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95d94b8b452ce04289b26df1d868230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114494914433203246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,8 +272,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -413227349
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 557fb326f6dea0241b6cd91e0a2ac1d1, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
