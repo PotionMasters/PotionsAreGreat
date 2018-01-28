@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public int[] panelTimeLimitss;
     public Recipe GoalRecipe { get; private set; }
 
+    bool player1MusicStart = false;
+
     public LineDrawer lineDrawer;
     public Transform crystalBall2;
     public Cauldron cauldron;
@@ -49,6 +51,11 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if (panelType == PanelType.Book && player1MusicStart)
+            {
+                //AudioManager.instance.PlayMusic(player, .5f);
+            }
+
             AdvancePanelType();
         }
 
@@ -59,6 +66,13 @@ public class GameManager : MonoBehaviour
             int seconds = Mathf.CeilToInt(GetTimeLeft());
             timerText.text = seconds > 0 ? seconds.ToString() : "";
         }
+
+
+
+
+
+
+
     }
 
     private void AdvancePanelType()

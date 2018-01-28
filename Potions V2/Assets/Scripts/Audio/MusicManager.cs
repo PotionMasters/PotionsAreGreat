@@ -4,6 +4,10 @@ public class MusicManager : MonoBehaviour {
 
     public AudioClip mainTheme;
     public AudioClip menuTheme;
+    public AudioClip player1Music;
+    public AudioClip switchMusic;
+    public AudioClip player2Music;
+
 
     void Start()
     {
@@ -15,6 +19,11 @@ public class MusicManager : MonoBehaviour {
     {
        
     
+
+    }
+
+    public void PlayerMusic(int amount)
+    {
 
     }
 
