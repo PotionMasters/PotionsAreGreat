@@ -141,8 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   pickupEffect: {fileID: 0}
-  destroyEffect: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1,
-    type: 2}
+  destroyEffect: {fileID: 100006, guid: bcaff8fc36e95584bb27cc3cf7c6cb14, type: 2}
 --- !u!114 &114750235850353964
 MonoBehaviour:
   m_ObjectHideFlags: 1
