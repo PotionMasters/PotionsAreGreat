@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public Recipe GoalRecipe { get; private set; }
 
     bool player1MusicStart = false;
+    bool switchMusic = false;
+    bool player2MusicStart = false;
+    bool endMusic = false;
+
 
     public LineDrawer lineDrawer;
     public Transform crystalBall2;
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
     private PanelType panelType;
     private float panelStartTime;
     public bool GameWon { get; private set; }
+
+    MusicManager theMusic;
 
     public System.Action<Transform, Transform, float> onTransition; // panel0, panel1, t
 
@@ -37,6 +43,8 @@ public class GameManager : MonoBehaviour
         panelType = PanelType.Menu;
         GoalRecipe = Recipe.Random(3, FindObjectOfType<IngredientsManager>());
         cauldron.onIngredientAdded += OnCauldronAddIngredient;
+
+        theMusic = FindObjectOfType<MusicManager>(); 
     }
 
     private void Update()
@@ -51,10 +59,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (panelType == PanelType.Book && player1MusicStart)
-            {
-                //AudioManager.instance.PlayMusic(player, .5f);
-            }
+            //HandleMusic();
 
             AdvancePanelType();
         }
@@ -75,6 +80,41 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void HandleMusic()
+    {
+        if (panelType == PanelType.Book && !player1MusicStart)
+        {
+            AudioManager.instance.PlayMusic(theMusic.player1Music);
+            player1MusicStart = true;
+            if (endMusic)
+            {
+                endMusic = false;
+            }
+
+        }
+        if (panelType == PanelType.Switch && !switchMusic)
+        {
+            AudioManager.instance.PlayMusic(theMusic.switchMusic);
+            switchMusic = true;
+        }
+        if (panelType == PanelType.Ball2 && !player2MusicStart)
+        {
+            AudioManager.instance.PlayMusic(theMusic.player2Music);
+            player2MusicStart = true;
+        }
+
+        if (panelType == PanelType.End && !endMusic)
+        {
+            AudioManager.instance.PlayMusic(theMusic.endMusic);
+            endMusic = true;
+
+            player1MusicStart = false;
+            player2MusicStart = false;
+            switchMusic = false;
+
+        }
+    }
+
     private void AdvancePanelType()
     {
         if (panelType == PanelType.End)
@@ -90,6 +130,9 @@ public class GameManager : MonoBehaviour
     private void SetPanelType(PanelType PanelType, bool immediate=false)
     {
         Debug.Log("Set PanelType " + PanelType.ToString());
+
+        AudioManager.instance.PlaySound2D("SlideTransition");
+
         StartCoroutine(TransitionRoutine(PanelType, immediate));
     }
 
@@ -128,6 +171,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+        HandleMusic();
 
         OnTransitionDone(oldPanelType, newPanelType);
         panel0.gameObject.SetActive(false);
@@ -141,6 +185,7 @@ public class GameManager : MonoBehaviour
             Vector3 oldPos = lineDrawer.transform.position;
             lineDrawer.transform.SetParent(crystalBall2.transform, false);
             lineDrawer.Move(lineDrawer.transform.position - oldPos);
+            
         }
     }
 

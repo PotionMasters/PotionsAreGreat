@@ -7,11 +7,12 @@ public class MusicManager : MonoBehaviour {
     public AudioClip player1Music;
     public AudioClip switchMusic;
     public AudioClip player2Music;
-
+    public AudioClip endMusic;
+    public float fadeTime = .5f;
 
     void Start()
     {
-        AudioManager.instance.PlayMusic(menuTheme, 3);
+        AudioManager.instance.PlayMusic(menuTheme, fadeTime);
       
     }
 
@@ -22,10 +23,7 @@ public class MusicManager : MonoBehaviour {
 
     }
 
-    public void PlayerMusic(int amount)
-    {
-
-    }
+   
 
    
 }
