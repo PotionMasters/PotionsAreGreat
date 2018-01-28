@@ -3,84 +3,88 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public enum Panel { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
+
 public class GameManager : MonoBehaviour
 {
-    public SeedManager seeder;
+    public GameObject[] panelEntities;
+    public int[] panelTimeLimits;
 
-    [SerializeField] private GameObject PotionScene;
-    [SerializeField] private GameObject RecipeScene;
+    private Panel panel;
+    private float panelStartTime;
 
 
-    public Player[] Players { get; private set; }
-    public Player BookPlayer { get; private set; }
-    public Player PotionPlayer { get; private set; }
-    public Player LocalHuman { get; private set; }
-
-    public bool IsPlaying { get; private set; }
-    public bool PlayersReady { get; private set; }
-    private System.Action onPlayersReady;
-
-    public bool debugSolo = false;
-
-    public void RegisterPlayer(Player player)
+    public float GetTimeLeft()
     {
-        Players[player.id] = player;
-        if (player.Role == PlayerRole.Book)
-        {
-            BookPlayer = player;
-            Debug.Log("Registered book player (player " + player.id + ")");
-        }
-        else
-        {
-            PotionPlayer = player;
-            Debug.Log("Registered potion player (player " + player.id + ")");
-        }
-
-        if (debugSolo || (BookPlayer != null && PotionPlayer != null))
-        {
-            OnAllPlayersRegistered();
-        }
-    }
-    public void DoOncePlayersReady(System.Action action)
-    {
-        if (PlayersReady) action();
-        onPlayersReady += action;
-
-        if (BookPlayer.IsLocalHuman())
-        {
-            RecipeScene.SetActive(true);
-        }
-        else if (PotionPlayer.IsLocalHuman())
-        {
-            PotionScene.SetActive(true);
-        }
-
-
+        return Mathf.Max(0, panelTimeLimits[(int)panel] - (Time.timeSinceLevelLoad - panelStartTime));
     }
 
-    private void Awake()
+    private void Start()
     {
-        Players = new Player[2];
-        IsPlaying = false;
-
-        PotionScene.SetActive(false);
-        RecipeScene.SetActive(false);
-
-        //seeder.onSeedSet += (int seed) => // setup
+        panel = Panel.Menu;
     }
-    private void OnAllPlayersRegistered()
+
+    private void Update()
     {
-        // Set Ready
-        PlayersReady = true;
-        IsPlaying = true;
-
-        Debug.Log("All players Ready");
-
-        NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
-        hud.enabled = false;
-
-        // Event
-        if (onPlayersReady != null)
-            onPlayersReady();
+        if (panel != Panel.Menu && panel != Panel.End && panel != Panel.Switch )
+        {
+            if (GetTimeLeft() <= 0)
+            {
+                AdvancePanel();
+            }
+        }
+        else if (panel == Panel.Menu || panel == Panel.Switch)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                AdvancePanel();
+            }
+        }
+        else if (panel == Panel.End)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SetPanel(Panel.Menu, true);
+            }
+        }
     }
+
+    private void AdvancePanel()
+    {
+        SetPanel(panel + 1);
+    }
+
+    private void SetPanel(Panel panel, bool immediate=false)
+    {
+        StartCoroutine(TransitionRoutine(panel, immediate));
+    }
+
+    private IEnumerator TransitionRoutine(Panel newPanel, bool immediate=false)
+    {
+        Transform panel0 = panelEntities[(int)panel].transform;
+        Transform panel1 = panelEntities[(int)newPanel].transform;
+
+        panel = newPanel;
+        panel1.gameObject.SetActive(false);
+        panelStartTime = Time.timeSinceLevelLoad;
+
+        float duration = immediate ? 0 : 1;
+        for (float t = 0; ; t += Time.deltaTime / duration)
+        {
+            t = Mathf.Min(t, 1);
+            float tt = Mathf.Pow(t, 2);
+
+            Camera.main.transform.position = Vector3.Lerp(panel0.position, panel1.position, tt);
+
+            yield return null;
+
+            if (t >= 1)
+            {
+                break;
+            }
+        }
+
+        panel0.gameObject.SetActive(false);
+    }
+
 }
