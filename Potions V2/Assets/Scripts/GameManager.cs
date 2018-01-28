@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     bool player2MusicStart = false;
     bool endMusic = false;
 
+    private Coroutine transition;
 
     public LineDrawer lineDrawer;
     public Transform crystalBall2;
@@ -31,10 +32,12 @@ public class GameManager : MonoBehaviour
     private PanelType panelType;
     private float panelStartTime;
     public bool GameWon { get; private set; }
+    public bool GameOver { get; private set; }
 
     MusicManager theMusic;
 
     public System.Action<Transform, Transform, float> onTransition; // panel0, panel1, t
+    public System.Action<bool> onGameOver; // won
 
 
     public float GetTimeLeft()
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         GameWon = false;
+        GameOver = false;
         panelType = PanelType.Menu;
         GoalRecipe = Recipe.Random(3, FindObjectOfType<IngredientsManager>());
         theMusic = FindObjectOfType<MusicManager>();
@@ -68,7 +72,15 @@ public class GameManager : MonoBehaviour
         {
             if (GetTimeLeft() <= 0)
             {
-                AdvancePanel();
+                if (panelType == PanelType.Cauldron && !GameOver)
+                {
+                    // Lose by timeout
+                    GG(false);
+                }
+                else
+                {
+                    AdvancePanel();
+                }
             }
         }
 
@@ -89,7 +101,6 @@ public class GameManager : MonoBehaviour
                 difficulty = Difficulty.Master;
                 AdvancePanel();
             }
-            
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -142,17 +153,13 @@ public class GameManager : MonoBehaviour
 
     private void AdvancePanel()
     {
-        // HACK
-        if (panelType == PanelType.Cauldron)
-        {
-            panels[panels.Length - 1].GetComponent<EndPanel>().Show();
-            SetPanelType(panelType + 1, 2.0f, 2.0f);
-            return;
-        }
-
         if (panelType == PanelType.End)
         {
             SceneManager.LoadScene(0);
+        }
+        else if (panelType == PanelType.Cauldron)
+        {
+            SetPanelType(panelType + 1, 2.0f, 2.0f);
         }
         else
         {
@@ -162,8 +169,11 @@ public class GameManager : MonoBehaviour
 
     private void SetPanelType(PanelType PanelType, float duration = 0.3f, float delay = 0)
     {
-        AudioManager.instance.PlaySound2D("SlideTransition");
-        StartCoroutine(TransitionRoutine(PanelType, duration, delay));
+        if (transition == null)
+        {
+            AudioManager.instance.PlaySound2D("SlideTransition");
+            transition = StartCoroutine(TransitionRoutine(PanelType, duration, delay));
+        }
     }
 
     private IEnumerator TransitionRoutine(PanelType newPanelType, float duration, float delay)
@@ -207,6 +217,7 @@ public class GameManager : MonoBehaviour
 
         OnTransitionDone(oldPanelType, newPanelType);
         panel0.gameObject.SetActive(false);
+        transition = null;
     }
 
     private void OnTransitionDone(PanelType oldPanel, PanelType newPanel)
@@ -224,16 +235,33 @@ public class GameManager : MonoBehaviour
     {
         if (!cauldron.IsPotionCorrectSoFar(GoalRecipe))
         {
-            // Fail
-            Debug.Log("FAIL (incorrect ingredients)");
-            AdvancePanel();
+            GG(false);
         }
         else if (cauldron.IsPotionCorrect(GoalRecipe))
         {
-            // Win
-            Debug.Log("WIN");
-            GameWon = true;
-            AdvancePanel();
+            GG(true);
         }
+    }
+
+    private void GG(bool won)
+    {
+        if (won)
+        {
+            Debug.Log("WIN");
+        }
+        else
+        {
+            Debug.Log("FAIL (incorrect ingredients)");
+
+        }
+        GameWon = won;
+        if (onGameOver != null)
+        {
+            onGameOver(won);
+        }
+
+        GameOver = true;
+
+        AdvancePanel();
     }
 }
