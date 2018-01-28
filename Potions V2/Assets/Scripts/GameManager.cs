@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 {
     private int[] timeLimitsBeginner = new int[7] { 0, 20, 20, 0, 20, 20, 0 };
     private int[] timeLimitsNormal = new int[7] { 0, 10, 10, 0, 10, 10, 0 };
-    private int[] timeLimitsMaster = new int[7] { 0, 5, 5, 0, 5, 5, 0 };
+    private int[] timeLimitsMaster = new int[7] { 0, 2, 6, 0, 3, 5, 0 };
     private Difficulty difficulty;
 
     public Panel[] panels;
