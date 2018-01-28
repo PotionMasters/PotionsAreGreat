@@ -20,7 +20,12 @@ public class Cauldron : MonoBehaviour
     public System.Action<IngredientType> onIngredientAdded;
 
 
-    
+    private void Awake()
+    {
+        GameManager gm = FindObjectOfType<GameManager>();
+        gm.onGameOver += OnGameOver;
+    }
+
 
     public bool IsPotionCorrect(Recipe recipe)
     {
@@ -108,6 +113,14 @@ public class Cauldron : MonoBehaviour
             roomTint.a = roomLightSprite.color.a;
             roomLightSprite.color = roomTint;
             yield return null;
+        }
+    }
+
+    private void OnGameOver(bool won)
+    {
+        if (!won)
+        {
+            StartCoroutine(LiquidColorRoutine(Color.black));
         }
     }
 }
