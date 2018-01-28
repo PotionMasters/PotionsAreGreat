@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Book : MonoBehaviour
 {
-    [SerializeField] private Recipe cookBook;
+    [SerializeField] private Recipe recipe;
     [SerializeField] private List<Ingredient> requiredIngredients;
     [SerializeField] private float buffer = 1.0f;
 
@@ -24,7 +24,7 @@ public class Book : MonoBehaviour
 
         for(int i=0; i < listRange; i++)
         {
-            requiredIngredients.Add(cookBook.Ingredients[Random.Range(0, cookBook.Ingredients.Count)]);
+            requiredIngredients.Add(recipe.Ingredients[Random.Range(0, recipe.Ingredients.Count)]);
         }
     }
 
