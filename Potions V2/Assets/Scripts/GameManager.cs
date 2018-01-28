@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum PanelType { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
+public enum Difficulty { Easy, Normal, Master }
 
 public class GameManager : MonoBehaviour
 {
+    private int[] timeLimitsEasy = new int[7] { 0, 15, 15, 0, 15, 15, 0 };
+    private int[] timeLimitsNormal = new int[7] { 0, 10, 10, 0, 10, 10, 0 };
+    private int[] timeLimitsMaster = new int[7] { 0, 5, 5, 0, 5, 5, 0 };
+    private Difficulty difficulty;
+
     public Panel[] panels;
-    public int[] panelTimeLimitss;
     public Recipe GoalRecipe { get; private set; }
 
     bool player1MusicStart = false;
@@ -34,7 +39,12 @@ public class GameManager : MonoBehaviour
 
     public float GetTimeLeft()
     {
-        return Mathf.Max(0, panelTimeLimitss[(int)panelType] - (Time.timeSinceLevelLoad - panelStartTime));
+        float limit =
+            difficulty == Difficulty.Easy ? timeLimitsEasy[(int)panelType] :
+            difficulty == Difficulty.Normal ? timeLimitsNormal[(int)panelType] :
+            difficulty == Difficulty.Master ? timeLimitsMaster[(int)panelType] : 0;
+
+        return Mathf.Max(0, limit - (Time.timeSinceLevelLoad - panelStartTime));
     }
 
     private void Awake()
@@ -62,10 +72,27 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (panelType == PanelType.Menu)
         {
-            //HandleMusic();
-
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                difficulty = Difficulty.Easy;
+                AdvancePanel();
+            }
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                difficulty = Difficulty.Normal;
+                AdvancePanel();
+            }
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                difficulty = Difficulty.Master;
+                AdvancePanel();
+            }
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
             AdvancePanel();
         }
 
