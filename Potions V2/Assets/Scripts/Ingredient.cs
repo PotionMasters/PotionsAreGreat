@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour {
-
-    [SerializeField] string ingredientName;
-    [SerializeField] List<Ingredient> compatibleIngredients;
-
-    public string IngredientName
+public class Ingredient : MonoBehaviour
+{
+    [SerializeField] IngredientType type;
+    public IngredientType Type
     {
         get
         {
-            return ingredientName;
+            return type;
         }
     }
+
+    [SerializeField] List<Ingredient> compatibleIngredients;
 }

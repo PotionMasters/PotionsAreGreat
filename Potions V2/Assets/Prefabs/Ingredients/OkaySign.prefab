@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9dbf2fc9212114faa656876c3b00b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: OkaySign
+  type: 6
   compatibleIngredients: []
 --- !u!114 &114400984037046664
 MonoBehaviour:

@@ -3,33 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum PanelType { Menu, Book, Ball1, Switch, Ball2, Cauldron, End }
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] PanelTypeEntities;
-    public int[] PanelTypeTimeLimits;
+    public Panel[] panels;
+    public int[] panelTimeLimitss;
+    public Recipe GoalRecipe { get; private set; }
 
     public LineDrawer lineDrawer;
     public Transform crystalBall2;
+    public Cauldron cauldron;
 
     private PanelType panelType;
-    private float PanelTypeStartTime;
+    private float panelStartTime;
+    public bool GameWon { get; private set; }
 
     public System.Action<Transform, Transform, float> onTransition; // panel0, panel1, t
 
 
-
-
     public float GetTimeLeft()
     {
-        return Mathf.Max(0, PanelTypeTimeLimits[(int)panelType] - (Time.timeSinceLevelLoad - PanelTypeStartTime));
+        return Mathf.Max(0, panelTimeLimitss[(int)panelType] - (Time.timeSinceLevelLoad - panelStartTime));
     }
 
     private void Awake()
     {
+        GameWon = false;
         panelType = PanelType.Menu;
+        GoalRecipe = Recipe.Random(3, FindObjectOfType<IngredientsManager>());
+        cauldron.onIngredientAdded += OnCauldronAddIngredient;
     }
 
     private void Update()
@@ -41,25 +46,15 @@ public class GameManager : MonoBehaviour
                 AdvancePanelType();
             }
         }
-        else if (panelType == PanelType.Menu || panelType == PanelType.Switch)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AdvancePanelType();
-            }
-        }
-        else if (panelType == PanelType.End)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AdvancePanelType();
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             AdvancePanelType();
         }
+
+        // Timer
+        //int seconds = Mathf.CeilToInt(GetTimeLeft());
+        //timerText.text = seconds > 0 ? seconds.ToString() : "";
     }
 
     private void AdvancePanelType()
@@ -82,14 +77,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator TransitionRoutine(PanelType newPanelType, bool immediate=false)
     {
-        Transform panel0 = PanelTypeEntities[(int)panelType].transform;
-        Transform panel1 = PanelTypeEntities[(int)newPanelType].transform;
+        Transform panel0 = panels[(int)panelType].transform;
+        Transform panel1 = panels[(int)newPanelType].transform;
 
         PanelType oldPanelType = panelType;
 
         panelType = newPanelType;
         panel1.gameObject.SetActive(true);
-        PanelTypeStartTime = Time.timeSinceLevelLoad;
+        panelStartTime = Time.timeSinceLevelLoad;
 
         float duration = immediate ? 0 : 0.3f;
         for (float t = 0; ; t += Time.deltaTime / duration)
@@ -128,6 +123,21 @@ public class GameManager : MonoBehaviour
             Vector3 oldPos = lineDrawer.transform.position;
             lineDrawer.transform.SetParent(crystalBall2.transform, false);
             lineDrawer.Move(lineDrawer.transform.position - oldPos);
+        }
+    }
+
+    private void OnCauldronAddIngredient(IngredientType ingredient)
+    {
+        if (!cauldron.IsPotionCorrectSoFar(GoalRecipe))
+        {
+            // Fail
+            AdvancePanelType();
+        }
+        else if (cauldron.IsPotionCorrect(GoalRecipe))
+        {
+            // Win
+            GameWon = true;
+            AdvancePanelType();
         }
     }
 }

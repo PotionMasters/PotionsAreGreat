@@ -530,8 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFieldMesh: {fileID: 102108749843837420}
-  cbMsgPrefab: {fileID: 114626043874168438, guid: 6cd2c292a698f514aab342d777576a5a,
-    type: 2}
+  cbMsgPrefab: {fileID: 0}
 --- !u!114 &114792466095409266
 MonoBehaviour:
   m_ObjectHideFlags: 1

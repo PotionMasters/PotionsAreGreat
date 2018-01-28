@@ -136,10 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85539f1da4c6b7f41b0e54a6fa9a202c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterSplash: {fileID: 1687118924408352, guid: 77c69ec12208c4c4380d15e30b6f8f68,
-    type: 2}
   waterPoint: {fileID: 4651839527865544}
-  heldIngredients: []
+  heldIngredients: 
   heat: 100
 --- !u!212 &212793737802084396
 SpriteRenderer:

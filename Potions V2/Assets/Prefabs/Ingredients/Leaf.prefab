@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9dbf2fc9212114faa656876c3b00b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Leaf
+  type: 4
   compatibleIngredients: []
 --- !u!114 &114487091439333714
 MonoBehaviour:
