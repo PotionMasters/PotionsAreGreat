@@ -142,6 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80ac254f7f7e684999d04ecd38fbdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 0}
+  destroyEffect: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 2}
 --- !u!212 &212899341706996622
 SpriteRenderer:
   m_ObjectHideFlags: 1
