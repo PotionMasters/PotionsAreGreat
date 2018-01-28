@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour {
 
     void Start()
     {
-        AudioManager.instance.PlayMusic(mainTheme, 3);
+        AudioManager.instance.PlayMusic(menuTheme, 3);
       
     }
 

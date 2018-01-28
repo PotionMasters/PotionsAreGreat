@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -154,6 +154,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b729ddd8eb5781d44bfe5b181d449c57, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &81001852
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 907005223}
+    m_Modifications:
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -14.030001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e9357d2a45a901b4fb77122ec0207249, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &164257159
 GameObject:
@@ -386,6 +428,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &541519672 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4242503286461106, guid: e9357d2a45a901b4fb77122ec0207249,
+    type: 2}
+  m_PrefabInternal: {fileID: 81001852}
 --- !u!1001 &695415584
 Prefab:
   m_ObjectHideFlags: 0
@@ -434,6 +481,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114318346221317584, guid: 032100a0dee752845a3ded61ef2e8cd2,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Player 2: Divine the ingredients from the crystal ball.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 032100a0dee752845a3ded61ef2e8cd2, type: 2}
@@ -558,6 +610,7 @@ Transform:
   - {fileID: 1113997466}
   - {fileID: 180935196}
   - {fileID: 294648208}
+  - {fileID: 541519672}
   - {fileID: 1514670307}
   - {fileID: 244748773}
   m_Father: {fileID: 0}
@@ -601,6 +654,16 @@ Prefab:
     - target: {fileID: 4388414543339590, guid: 1c281b9c0eb5e204fb2f2a31f1811784, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114009420079606220, guid: 1c281b9c0eb5e204fb2f2a31f1811784,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 148
+      objectReference: {fileID: 0}
+    - target: {fileID: 114009420079606220, guid: 1c281b9c0eb5e204fb2f2a31f1811784,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 148
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c281b9c0eb5e204fb2f2a31f1811784, type: 2}
@@ -654,6 +717,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 114742768236849172, guid: b89e95759fb8f8a45aac66954547d671,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Player 1: Memorize these ingredients. '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b89e95759fb8f8a45aac66954547d671, type: 2}
   m_IsPrefabParent: 0
@@ -705,7 +773,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4371451532074340, guid: 8ec8d3598288a5a4c888f8b66c22defb, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282703644662372, guid: 8ec8d3598288a5a4c888f8b66c22defb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110367708517898, guid: 8ec8d3598288a5a4c888f8b66c22defb,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 114722229469257614, guid: 8ec8d3598288a5a4c888f8b66c22defb,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 114722229469257614, guid: 8ec8d3598288a5a4c888f8b66c22defb,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 172
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ec8d3598288a5a4c888f8b66c22defb, type: 2}
@@ -748,6 +835,21 @@ Prefab:
     - target: {fileID: 4293252359450452, guid: d7b472d7d3e7f52488568549a033aded, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277677385104360, guid: d7b472d7d3e7f52488568549a033aded,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277677385104360, guid: d7b472d7d3e7f52488568549a033aded,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277677385104360, guid: d7b472d7d3e7f52488568549a033aded,
+        type: 2}
+      propertyPath: m_Text
+      value: "Player 2, \rprepare to potion."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7b472d7d3e7f52488568549a033aded, type: 2}
@@ -942,12 +1044,12 @@ RectTransform:
 Transform:
   m_PrefabParentObject: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
     type: 2}
-  m_PrefabInternal: {fileID: 1980867889}
+  m_PrefabInternal: {fileID: 1546361723}
 --- !u!114 &1514670310 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114779332877112568, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
     type: 2}
-  m_PrefabInternal: {fileID: 1980867889}
+  m_PrefabInternal: {fileID: 1546361723}
   m_Script: {fileID: 11500000, guid: e95d94b8b452ce04289b26df1d868230, type: 3}
 --- !u!1 &1522315320
 GameObject:
@@ -1102,6 +1204,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1522315320}
+--- !u!1001 &1546361723
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 907005223}
+    m_Modifications:
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506026138929102, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
+        type: 2}
+      propertyPath: waterPoint
+      value: 
+      objectReference: {fileID: 541519672}
+    - target: {fileID: 114064122344508782, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Player 2: Mix the correct potion.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1733590154
 Prefab:
   m_ObjectHideFlags: 0
@@ -1359,78 +1513,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1800810068
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557620645151156, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: menuTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e5a221cbfb6fe44b930ebf83729ee10, type: 3}
+    - target: {fileID: 114557620645151156, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: mainTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 64b5f87a04fff5c48b04d91aee650caa, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1864640920 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4069880234423024, guid: 032100a0dee752845a3ded61ef2e8cd2,
     type: 2}
   m_PrefabInternal: {fileID: 695415584}
---- !u!1001 &1980867889
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 907005223}
-    m_Modifications:
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000089407
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -5e-15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114064122344508782, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114064122344508782, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114064122344508782, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224089696751828872, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 224089696751828872, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 04aad1da4c1a4df4f8adabc11b84b1d8, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &2011254394
 Prefab:
   m_ObjectHideFlags: 0
@@ -1479,6 +1618,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114812481605786336, guid: 2583d216d6b399b4a80b30ad2186d862,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Player1: Draw descriptions of the ingredients in the crystal ball. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2583d216d6b399b4a80b30ad2186d862, type: 2}

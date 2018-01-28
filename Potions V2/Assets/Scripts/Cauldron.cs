@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour
 {
+    [SerializeField]
     private GameObject waterSplash;
     public Transform waterPoint;
     public SpriteRenderer liquidSprite;
@@ -62,15 +63,16 @@ public class Cauldron : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         var ingredient = collider.GetComponent<Ingredient>();
-        //var effects = collider.GetComponent<DraggableObject>();
+       var effects = collider.GetComponent<DraggableObject>();
 
         if (ingredient != null)
         {
             AudioManager.instance.PlaySound2D("Dropped in Cauldron");
             AddIngredient(ingredient);
             Splash();
+            effects.DestroyEffect();
+
             Destroy(ingredient.gameObject);
-            //effects.DestroyEffect();
         }
     }
 
@@ -88,7 +90,7 @@ public class Cauldron : MonoBehaviour
     {
         if (waterSplash != null)
         {
-            Instantiate(waterSplash, waterPoint);
+            GameObject clone = Instantiate(waterSplash, waterPoint.transform.position, waterSplash.transform.rotation);
         }
     }
 

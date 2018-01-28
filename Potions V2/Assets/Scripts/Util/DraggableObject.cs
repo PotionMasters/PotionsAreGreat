@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class DraggableObject : MonoBehaviour {
 
+ 
+
     [SerializeField]
     private GameObject pickupEffect;
+
+  
 
     [SerializeField]
     private GameObject destroyEffect;
@@ -39,9 +43,9 @@ public class DraggableObject : MonoBehaviour {
 
     public void DestroyEffect()
     {
-        if (destroyEffect !=null)
+        if (destroyEffect !=null )
         {
-            GameObject clone = Instantiate(destroyEffect, this.transform.position, transform.rotation);
+            GameObject clone = Instantiate(destroyEffect, transform.position, destroyEffect.transform.rotation);
         }
     }
 
