@@ -2,27 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Recipe : MonoBehaviour {
+public class Recipe : MonoBehaviour
+{
+    [SerializeField] List<Ingredient> ingredients;
 
-    public struct RecipeStep
-    {
-        public Ingredient ingredient;
-        public bool Stir;
-        public int Heat;
-    }
-
-    [SerializeField] List<Ingredient> requiredIngredients;
-
-    public List<Ingredient> RequiredIngredients
+    public List<Ingredient> Ingredients
     {
         get
         {
-            return requiredIngredients;
+            return ingredients;
         }
 
         set
         {
-            requiredIngredients = value;
+            ingredients = value;
         }
     }
 }
