@@ -76,13 +76,6 @@ public class GameManager : MonoBehaviour
             int seconds = Mathf.CeilToInt(GetTimeLeft());
             timerText.text = seconds > 0 ? seconds.ToString() : "";
         }
-
-
-
-
-
-
-
     }
 
     private void HandleMusic()

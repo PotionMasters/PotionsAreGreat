@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class Panel : MonoBehaviour
 {
     public Text timerText;
+
 }

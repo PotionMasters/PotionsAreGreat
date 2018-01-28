@@ -90,6 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224274551580778168}
   - component: {fileID: 223781402013758168}
+  - component: {fileID: 225215832201523630}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -362,7 +363,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: space when ready
+  m_Text: 'press E for easy
+
+    press N for normal
+
+    press M for master'
 --- !u!114 &114790892164440764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -641,3 +646,14 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00000667572, y: -0.0000042915344}
   m_SizeDelta: {x: 3168, y: 1782}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225215832201523630
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873946660668678}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
