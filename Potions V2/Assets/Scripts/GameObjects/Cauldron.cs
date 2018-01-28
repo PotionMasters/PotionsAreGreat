@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject waterSplash;
+    [SerializeField]
+    public Transform waterPoint;
+
     [SerializeField] List<Ingredient> heldIngredients;
-    [SerializeField] Recipe currentRecipe;
+    private Recipe currentRecipe;
     
     [Header("Cauldron Properties")]
     [SerializeField] int heat = 100;
+
+
+    private void Awake()
+    {
+        currentRecipe = FindObjectOfType<Recipe>();
+        if (currentRecipe == null)
+        {
+            Debug.LogError("Missing recipe");
+        }
+    }
 
     public List<Ingredient> HeldIngredients
     {
@@ -23,7 +38,6 @@ public class Cauldron : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         if(currentRecipe.Ingredients.Count == 0)
@@ -41,14 +55,24 @@ public class Cauldron : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var ingred = collision.GetComponent<Ingredient>();
+        var effects = collision.GetComponent<DraggableObject>();
 
         heldIngredients.Add(ingred);
 
         if (currentRecipe.Ingredients.Contains(ingred))
         {
             currentRecipe.Ingredients.Remove(ingred);
+            effects.DestroyEffect();
+            
             Destroy(ingred.gameObject);
+
             AudioManager.instance.PlaySound2D("Dropped in Cauldron");
+
+            if (waterSplash !=null)
+            {
+                GameObject clone = Instantiate(waterSplash, waterPoint);
+            }
+
             Debug.Log(ingred.IngredientName + " has been added.");
         }
     }
