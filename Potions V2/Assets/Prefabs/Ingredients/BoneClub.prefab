@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9dbf2fc9212114faa656876c3b00b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: BoneClub
+  type: 0
   compatibleIngredients: []
 --- !u!212 &212107581147406272
 SpriteRenderer:
@@ -176,8 +176,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1522343991
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 535eba63f30d45b4ab48a821bbb6f18e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

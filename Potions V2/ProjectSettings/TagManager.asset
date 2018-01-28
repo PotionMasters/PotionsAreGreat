@@ -49,3 +49,6 @@ TagManager:
   - name: LineDrawing
     uniqueID: 2072441605
     locked: 0
+  - name: Ingredient
+    uniqueID: 2772623305
+    locked: 0

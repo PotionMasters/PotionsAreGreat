@@ -22,7 +22,7 @@ public class DraggableObject : MonoBehaviour {
             GameObject clone = Instantiate(pickupEffect, this.transform.position, transform.rotation);
         }
 
-        AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
+        //AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
