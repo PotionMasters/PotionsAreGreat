@@ -18,5 +18,13 @@ public class EndPanel : MonoBehaviour
             loseParent.gameObject.SetActive(true);
         }
 
+        StartCoroutine(EffectRoutine());
+    }
+
+    private IEnumerator EffectRoutine()
+    {
+        yield return new WaitForSeconds(1);
+
+        // effect
     }
 }
