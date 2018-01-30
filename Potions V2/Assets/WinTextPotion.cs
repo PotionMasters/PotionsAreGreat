@@ -8,13 +8,40 @@ public class WinTextPotion : MonoBehaviour {
     [SerializeField]
     private Text winText;
     //[SerializeField]
-    private string[] m_InspectorStrings;
+    private string[] Inspectoradj;
+    private string[] ADJ;
 
-    private string[] m_HardCodedStrings;
+    private string[] Inspectoradv;
+    private string[] ADV;
 
     void Awake()
     {
-        m_HardCodedStrings = new string[]
+        GetADJ();
+        GetADV();
+    }
+
+
+
+
+    private void OnEnable()
+    {
+        if (winText.text !=null)
+        {
+            winText.text = "You made a " + GetRandomADV() + " "  +  GetRandomADJ() + " potion. Well done.";
+
+        }
+        else
+        {
+            Debug.Log("Missing WinText on " + this.gameObject.name);
+        }
+    }
+
+
+
+
+    private void GetADJ()
+    {
+        ADJ = new string[]
             {
                  "bloody",
                  "lovely",
@@ -24,26 +51,39 @@ public class WinTextPotion : MonoBehaviour {
             };
     }
 
-    private void OnEnable()
+    private string GetRandomADJ()
     {
-        if (winText.text !=null)
-        {
-            winText.text = "You made a " + GetRandomHardCodedString() + " potion. Well done.";
-
-        }
-        else
-        {
-            Debug.Log("Missing WinText on " + this.gameObject.name);
-        }
+        return ADJ[Random.Range(0, ADJ.Length)];
     }
 
-    public string GetRandomInspectorString()
+    private string GetRandomInspectorADJ()
     {
-        return m_InspectorStrings[Random.Range(0, m_InspectorStrings.Length)];
+        return Inspectoradj[Random.Range(0, Inspectoradj.Length)];
     }
 
-    public string GetRandomHardCodedString()
+
+
+
+    private void GetADV()
     {
-        return m_HardCodedStrings[Random.Range(0, m_HardCodedStrings.Length)];
+        ADV = new string[]
+         {
+                 "really",
+                 "very",
+                 "fantastically",
+                 "mesmorizingly",
+         };
     }
+
+    private string GetRandomADV()
+    {
+        return ADV[Random.Range(0, ADV.Length)];
+    }
+
+    private string GetRandomInspectorADV()
+    {
+        return Inspectoradv[Random.Range(0, Inspectoradv.Length)];
+    }
+
+
 }

@@ -72,8 +72,9 @@ GameObject:
   - component: {fileID: 222191379717834220}
   - component: {fileID: 114494914433203246}
   - component: {fileID: 114649412740412038}
+  - component: {fileID: 114870458221972810}
   m_Layer: 0
-  m_Name: Text Lose
+  m_Name: Text Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,6 +658,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0.2
+--- !u!114 &114870458221972810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282703644662372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3330032252d17774f93a0d5c8696b751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winText: {fileID: 114494914433203246}
 --- !u!212 &212136936653388996
 SpriteRenderer:
   m_ObjectHideFlags: 1
