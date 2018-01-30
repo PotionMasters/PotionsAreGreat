@@ -13,6 +13,8 @@ public class Book : MonoBehaviour
 
     private void Start()
     {
+        //need a way to figure out how to tell the player which is the first ingredient and which is the last
+
         GameManager gm = FindObjectOfType<GameManager>();
         IngredientsManager ingredMgr = FindObjectOfType<IngredientsManager>();
 

@@ -21,15 +21,17 @@ public class DraggableObject : MonoBehaviour {
     {
         if (draggable)
         {
-            //add sound
-            Debug.Log("Sound!");
-
+         
             if (pickupEffect != null)
             {
                 GameObject clone = Instantiate(pickupEffect, this.transform.position, transform.rotation);
             }
+            else
+            {
+                Debug.Log("Missing pickupEffect on " + this.gameObject.name);
+            }
 
-            //AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
+            AudioManager.instance.PlaySound("IngredientPickup", this.transform.position);
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -38,7 +40,7 @@ public class DraggableObject : MonoBehaviour {
 
     }
 
-    void OnMouseDrag()//seems simplest solution
+    void OnMouseDrag()
     {
         if (draggable)
         {
@@ -55,6 +57,10 @@ public class DraggableObject : MonoBehaviour {
         if (destroyEffect !=null )
         {
             GameObject clone = Instantiate(destroyEffect, transform.position, destroyEffect.transform.rotation);
+        }
+        else
+        {
+            Debug.Log("Missing destroyEffect on " + this.gameObject.name);
         }
     }
 

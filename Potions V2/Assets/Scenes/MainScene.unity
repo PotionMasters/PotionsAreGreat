@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -379,6 +379,11 @@ Prefab:
         type: 2}
       propertyPath: intensity
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114742768236849172, guid: b89e95759fb8f8a45aac66954547d671,
+        type: 2}
+      propertyPath: m_Text
+      value: "Player 1: Memorize these ingredients \nand their order from top to bottom."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b89e95759fb8f8a45aac66954547d671, type: 2}
@@ -1143,6 +1148,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1513466913 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1282703644662372, guid: 8ec8d3598288a5a4c888f8b66c22defb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1564791653}
+--- !u!114 &1513466916 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114494914433203246, guid: 8ec8d3598288a5a4c888f8b66c22defb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1564791653}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1513466918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1513466913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3330032252d17774f93a0d5c8696b751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winText: {fileID: 1513466916}
 --- !u!4 &1514670307 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4885817804494484, guid: 04aad1da4c1a4df4f8adabc11b84b1d8,
@@ -1302,6 +1330,10 @@ Prefab:
       propertyPath: deathFXPoint
       value: 
       objectReference: {fileID: 541519672}
+    - target: {fileID: 1282703644662372, guid: 8ec8d3598288a5a4c888f8b66c22defb, type: 2}
+      propertyPath: m_Name
+      value: Text Win
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ec8d3598288a5a4c888f8b66c22defb, type: 2}
   m_IsPrefabParent: 0
@@ -1485,6 +1517,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114813317918349274, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: soundGroups.Array.data[0].group.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4940048844154572, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1517,6 +1554,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114813317918349274, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: soundGroups.Array.data[0].group.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd73745acee2484db6d0014a8cef7ee, type: 3}
+    - target: {fileID: 114813317918349274, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: soundGroups.Array.data[0].group.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: d78069735c0f14b40802c4767564ed14, type: 3}
+    - target: {fileID: 114813317918349274, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: soundGroups.Array.data[0].group.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2916ff68b614e194db7547cfc248b007, type: 3}
+    - target: {fileID: 114813317918349274, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: soundGroups.Array.data[0].group.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: d2c65dcf7ade7e945826ab452a90285a, type: 3}
+    - target: {fileID: 114813317918349274, guid: 8da0bd4779cf1224f8125e731b3cb0ce,
+        type: 2}
+      propertyPath: soundGroups.Array.data[0].group.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: bfbabd124d015914696111488c7bcc60, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8da0bd4779cf1224f8125e731b3cb0ce, type: 2}
   m_IsPrefabParent: 0

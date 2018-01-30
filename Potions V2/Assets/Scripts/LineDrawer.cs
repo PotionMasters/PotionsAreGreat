@@ -42,6 +42,9 @@ public class LineDrawer : MonoBehaviour
         {
             if (!drawing)
             {
+                //add  drawing sound
+                //
+
                 // Start Drawing
                 drawing = true;
 
